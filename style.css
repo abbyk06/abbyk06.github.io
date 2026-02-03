@@ -69,3 +69,11 @@ main > p > a {
     border-radius: 4px;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+nav > a:hover,
+main > a:hover,
+main > p > a:hover {
+    background-color: rgb(206, 189, 232); /* subtle highlight */
+    color: rgb(100, 100, 165); /* text color change on hover */
+    transform: scale(1.01); /* slight zoom effect */
+}
