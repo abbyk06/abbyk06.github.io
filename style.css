@@ -6,24 +6,33 @@ body{
 }
 
 h1 {
-    color: rgb(75, 75, 178);
+    color: rgb(122, 38, 136);
     text-align: left;
     font-weight: normal;
 }
 
-nav {
+nav > a{
+    text-decoration: none;
     color: rgb(100, 100, 165);
     text-align: left;
     font-weight: normal;
 }
 
 main > a{
+    text-decoration: none;
     color: rgb(100, 100, 165);
+    text-align: left;
+}
+
+main > p > a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
     text-align: left;
 }
 
 footer {
     color: rgb(130, 57, 88);
+    font-size: smaller;
 }
 
 
