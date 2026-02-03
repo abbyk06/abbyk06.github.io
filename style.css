@@ -68,10 +68,3 @@ main > p > a {
     border-radius: 4px;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
-
-nav > a:hover,
-main > a:hover,
-main > p > a:hover {
-    background-color: rgba(122, 38, 136, 0.18);
-    color: rgb(122, 38, 136);
-}
