@@ -1,8 +1,9 @@
-body{
+body {
     background-color: lavenderblush;
     font-family: "Lora", serif;
     padding-left: 25%;
     padding-right: 25%;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 h1 {
@@ -40,4 +41,37 @@ footer {
     font-family: "Lora", serif;
     font-weight: 400;
     font-style: normal;
+}
+
+footer {
+    color: rgb(130, 57, 88);
+    font-size: smaller;
+    animation: fadeUp 0.8s ease-in;
+}
+
+
+nav > a,
+main > a,
+main > p > a {
+    text-decoration: none;
+    color: rgb(100, 100, 165);
+    display: inline-block;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+nav > a,
+main > a,
+main > p > a {
+    text-decoration: none;
+    color: rgb(100, 100, 165);
+    padding: 0.1em 0.25em;
+    border-radius: 4px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+nav > a:hover,
+main > a:hover,
+main > p > a:hover {
+    background-color: rgba(122, 38, 136, 0.18);
+    color: rgb(122, 38, 136);
 }
