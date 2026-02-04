@@ -77,3 +77,19 @@ main > p > a:hover {
     color: rgb(100, 100, 165); /* text color change on hover */
     transform: scale(1.01); /* slight zoom effect */
 }
+
+nav {
+    display: flex;
+    justify-content: space-between; /* pushes left and right content to edges */
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none; /* remove underlines */
+    color: rgb(100, 100, 165);
+    margin: 0 5px;
+}
+
+.sep {
+    margin: 0 5px;
+}
