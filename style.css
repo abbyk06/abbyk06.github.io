@@ -1,42 +1,75 @@
 body {
     background-color: rgb(255, 246, 249);
     font-family: "Lora", serif;
-    padding-left: 25%;
-    padding-right: 25%;
-    animation: fadeIn 0.8s ease-in-out;
+    margin:0;
+    padding-top: 10%;
+    padding-left: 28%;
+    padding-RIGHT: 28%;
+    text-align: center;
+    animation: fadeInUp 0.5s ease-in-out;
 }
+
+/************************************************/
+/* Fade in and slide up animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/************************************************/
 
 h1 > a{
     text-decoration: none;
     color: rgb(122, 38, 136);
-    text-align: left;
+    text-align: center;
     font-weight: normal;
+    display:inline-block;
+    font-size: larger;
+}
+/************************************************/
+
+nav{
+    /*display:flex;*/
+    justify-content: center;
+    align-items:center;
+    gap: 15pc;
+    margin: 20px 0;
 }
 
 nav > a{
     text-decoration: none;
     color: rgb(100, 100, 165);
-    text-align: left;
+    text-align: center;
+    font-style: normal;
 }
 
-main > a{
+nav a:hover {
+    background-color: rgb(206, 189, 232);
+    transform: scale(1.05);
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+
+}
+/************************************************/
+
+main > a,
+main p > a {
     text-decoration: none;
     color: rgb(100, 100, 165);
-    text-align: left;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
 }
 
-main > p > a{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    text-align: left;
+main > a:hover,
+main p > a:hover {
+    background-color: rgb(206, 189, 232);
+    transform: scale(1.05);
 }
 
-footer {
-    color: rgb(130, 57, 88);
-    font-size: smaller;
-}
-
-
+/************************************************/
 .lora-regular {
     font-family: "Lora", serif;
     font-weight: 400;
@@ -44,50 +77,22 @@ footer {
 }
 
 footer {
-    color: rgb(130, 57, 88);
+    color: rgb(103, 32, 62);
     font-size: smaller;
     animation: fadeUp 0.8s ease-in;
+    padding-bottom: 50%;
 }
 
-
-nav > a,
-main > a,
-main > p > a {
+footer >a {
     text-decoration: none;
     color: rgb(100, 100, 165);
-    display: inline-block;
-    transition: color 0.5s ease, transform 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+}
+footer a:hover {
+    background-color: rgb(206, 189, 232);
+    transform: scale(1.05);
 }
 
-nav > div > a,
-main > a,
-main > p > a {
-    text-decoration: none;
-    color: rgb(100, 100, 165);
-    padding: 0.1em 0.25em;
-    border-radius: 4px;
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-nav > div > a:hover,
-main > a:hover,
-main > p > a:hover {
-    background-color: rgb(206, 189, 232); /* subtle highlight */
-    color: rgb(100, 100, 165); /* text color change on hover */
-    transform: scale(1.01); /* slight zoom effect */
-}
-
-nav {
-    display: flex;
-    justify-content: space-between; /* pushes left and right content to edges */
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none; /* remove underlines */
-    color: rgb(100, 100, 165);
-}
-
-.sep {
-    margin: 0 10px;
+main p {
+    text-align: center;
 }
