@@ -109,6 +109,7 @@ main p {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
     padding: 20px 0;
+    margin: 0 auto;
 }
 
 /* Images in the grid */
@@ -134,7 +135,7 @@ main p {
 
 /************************************************/
 .gallery {
-    display: grid; 
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(2, 1fr)); /* responsive grid */
     gap: 15px; /* space between images */
     padding: 20px 0;
