@@ -106,10 +106,12 @@ main p {
 /* Photo grid layout */
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     padding: 20px 0;
     margin: 0 auto;
+    justify-items: center;
+    justify-content: center;
 }
 
 /* Images in the grid */
@@ -118,12 +120,12 @@ main p {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.4s ease, filter 0.4s ease; /* smooth animation */
+    text-align: center;
 }
 
 /* Hover effect on images */
 .photo-grid img:hover {
-    transform: scale(1.15) rotate(-2deg) translateY(-10px); /* zoom, slight tilt, and float up */
-    filter: brightness(1.2); /* brighter and more colorful */
+    transform: scale(1.1) rotate(-2deg) translateY(-12px); /* zoom, slight tilt, and float up */
 }
 
 .makeSmaller{
@@ -136,11 +138,15 @@ main p {
 /************************************************/
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(2, 1fr)); /* responsive grid */
-    gap: 15px; /* space between images */
+    grid-template-columns: repeat(2, 1fr); /* responsive grid */
+    gap: 30px; /* space between images */
     padding: 20px 0;
-    width: 90%;       /* or whatever max width you want */
-    margin: 0 auto;   /* center the grid */
+    width: 100vw;
+    max-width: 1100px;
+    margin: 40px auto;   /* center the grid */
+    position:relative;
+    left:50%;
+    transform:translateX(-50%)
 }
 
 .gallery img {
