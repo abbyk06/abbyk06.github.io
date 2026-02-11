@@ -13,8 +13,14 @@
     <link rel="shortcut icon" href="/icons/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <script src="script.js" defer></script>
+
 </head>
+<script>
+    console.log("hi!");
+</script>
 <body>
+    <div class="cursor-trail"></div>
     <header>
         <h1><a href="index.html"> Abigail Kim</a></h1>
     </header>
@@ -24,28 +30,38 @@
         <a href="myphotos.html">Photos</a>
         <span class="sep">|</span>
         <a href="projects.html">Projects</a>
+        <button id="theme-toggle">🌙</button>
 </nav>
 
 <main>
     <div class="intro-container">
-        <img src="photos/profile.jpg" alt="Abby Kim" class="profile-pic">
+        <div class="profile-flip">
+        <div class="flip-inner">
+            <div class="flip-front">
+            <img src="photos/profile.jpg" alt="Abby Kim" class="profile-pic">
+            </div>
+            <div class="flip-back">
+            <p>Hi :P</p>
+        </div>
+        </div>
+    </div>
 
         <div class="intro-text">
-            <p>Hi, I'm Abby! I study Computer Science & Mathematics at the <a href="https://www.uottawa.ca/en" target="_blank" rel="noopener noreferrer" style="color:rgb(100, 100, 165);">University of Ottawa</a>.</p>
+            <p>Hi, I'm Abby! I study Computer Science & Mathematics at the <a href="https://www.uottawa.ca/en" target="_blank" rel="noopener noreferrer";">University of Ottawa</a>.</p>
 
             <p>I currently work for the
-                <a href="https://www.uottawa.ca/faculty-engineering/centre-entrepreneurship-engineering-design" target="_blank" rel="noopener noreferrer" style="color:rgb(100, 100, 165);">Centre for Entrepreneurship and Engineering Design</a>
+                <a href="https://www.uottawa.ca/faculty-engineering/centre-entrepreneurship-engineering-design" target="_blank" rel="noopener noreferrer";">Centre for Entrepreneurship and Engineering Design</a>
                 at the
-                <a href="https://www.uottawa.ca/faculty-engineering/centre-entrepreneurship-engineering-design/facilities/richard-labbe-makerspace" target="_blank" rel="noopener noreferrer" style="color:rgb(100, 100, 165);">Richard L’Abbé Makerspace</a>
+                <a href="https://www.uottawa.ca/faculty-engineering/centre-entrepreneurship-engineering-design/facilities/richard-labbe-makerspace" target="_blank" rel="noopener noreferrer";">Richard L’Abbé Makerspace</a>
                 and the
-                <a href="https://www.uottawa.ca/faculty-engineering/centre-entrepreneurship-engineering-design/facilities/makerlab" target="_blank" rel="noopener noreferrer" style="color:rgb(100, 100, 165);">Makerlab</a>,
+                <a href="https://www.uottawa.ca/faculty-engineering/centre-entrepreneurship-engineering-design/facilities/makerlab" target="_blank" rel="noopener noreferrer";">Makerlab</a>,
                 where I manage and lead their digital technologies workshops.</p>
             
-            <p>I'm also a volunteer mentor with <a href="https://technovationchallenge.org/" target="_blank" rel="noopener noreferrer" style="color:rgb(100, 100, 165);">Technovation</a>, helping a team of girls design apps and business plans!</p>
+            <p>I'm also a volunteer mentor with <a href="https://technovationchallenge.org/" target="_blank" rel="noopener noreferrer";">Technovation</a>, helping a team of girls design apps and business plans!</p>
 
-            <p>I previously directed the community team behind <a href="https://2026.uottahack.ca/" target="_blank" rel="noopener noreferrer" style="color:rgb(100, 100, 165);">the largest technology event in Ottawa</a>.</p>
+            <p>I previously directed the community team behind <a href="https://2026.uottahack.ca/" target="_blank" rel="noopener noreferrer";">the largest technology event in Ottawa</a>.</p>
 
-            <p>Check <a href="projects.html" target="_blank" rel="noopener noreferrer" style="color:rgb(100, 100, 165);">what else I've been up to</a>.</p>
+            <p>See more <a href="projects.html" target="_blank" rel="noopener noreferrer";">here</a>.</p>
         </div>
     </div>
 </main>

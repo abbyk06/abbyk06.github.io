@@ -60,6 +60,16 @@ nav a:hover {
 }
 /************************************************/
 
+.intro-text a {
+    color: rgb(100, 100, 165); /* original color */
+    text-decoration: none;      /* optional, removes underline */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.intro-text a:hover {
+    color: rgb(132, 109, 165);  /* hover color */
+}
+
 main > a,
 main p > a {
     text-decoration: none;
@@ -201,14 +211,13 @@ main p {
     margin-bottom: 10px;   /* space below image when text wraps */
     width: 250px;          /* image size */
     height: auto;
-    border-radius: 5%;    /* rounded/circular */
     object-fit: cover;
 }
 
 .profile-pic:hover {
     transition: filter 0.4s ease, box-shadow 0.6s ease;
-    cursor: url('icons/wand.png'), auto; /* your custom cursor */
-    box-shadow: 0 0 20px rgba(235, 208, 5, 0.504); /* glow effect */
+    cursor: url('icons/wand.png'), auto; /*custom cursor */
+    box-shadow: 0 0 20px rgba(235, 208, 5, 0.504); /* glow  */
 }
 
 .intro-text {
@@ -221,3 +230,104 @@ main p {
     display: block;
     clear: both;
 }
+
+/************************************/
+body.dark-mode {
+    background-color: #121212;
+    color: #e8e6e3;
+}
+
+body.dark-mode a {
+    color: #d2bdf6;
+}
+
+body.dark-mode nav a:hover {
+    background-color: #2a1f3d;
+}
+
+body.dark-mode footer {
+    color: #d2bdf6;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 15%;
+    right: 25%;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(235, 208, 5, 0.8);
+}
+
+/*********************************************/
+.cursor-trail {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: rgba(235, 208, 5, 0.5);
+    border-radius: 75%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scaleX(1) scaleY(1);
+    box-shadow: 0 0 15px rgba(235, 208, 5, 0.7), 0 0 25px rgba(235, 208, 5, 0.5);
+    z-index: 9999;
+    transition: transform 0.1s ease, width 0.1s ease, height 0.1s ease;
+}
+
+/**************************************************/
+.profile-flip {
+    float: left;           /* image on the left */
+    margin-right: 15px;    /* space between image and text */
+    margin-bottom: 10px;   /* space below image when text wraps */
+    width: 250px;          /* image size */
+    height: 250px;
+    perspective: 1000px; /* important for 3D flip */
+    margin-right: 25px; /* space from text */
+    object-fit: cover;
+
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d; /* enables 3D rotation */
+}
+
+.profile-flip:hover .flip-inner {
+    transform: rotateY(180deg); /* flips horizontally */
+}
+
+/* Front side (the image) */
+.flip-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* hide back when facing front */
+    overflow: hidden;
+}
+
+/* Back side (content) */
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(105, 85, 127);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    backface-visibility: hidden; /* hide front when facing back */
+    transform: rotateY(180deg);
+    padding: 10px;
+    font-size: 14px;
+}
+
