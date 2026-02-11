@@ -1,24 +1,24 @@
-
 const toggle = document.getElementById("theme-toggle");
+const icon = toggle.querySelector("img"); // select the image inside the button
 
-// Load saved pref
+// Load saved preference
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
-    toggle.textContent = "☀️";
+    icon.src = "icons/whitecat.png"; // switch to white cat for dark mode
 }
 
-
+// Click to toggle
 toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 
-    // Animate
-    toggle.style.transform = "rotateY(90deg)";
+    // Animate rotation
+    icon.style.transform = "rotateY(90deg)";
     setTimeout(() => {
-        toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-        toggle.style.transform = "rotateY(0deg)";
+        icon.src = document.body.classList.contains("dark-mode") ? "icons/whitecat.png" : "icons/blackcat.png";
+        icon.style.transform = "rotateY(0deg)";
     }, 150);
 
-    // Save pref
+    // Save preference
     localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
 });
 

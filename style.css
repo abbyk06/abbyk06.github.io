@@ -197,7 +197,7 @@ main p {
 
 /************************************/
 .magic:hover{
-    filter: brightness(1.1) drop-shadow(0 0 5px #c078df);
+    filter: brightness(1.1) drop-shadow(0 0 5px #eb9010);
     transform: scale(1.05);
     transition: filter 1s ease, transform 0.2s ease;
 }
@@ -243,8 +243,8 @@ body.dark-mode footer {
 
 #theme-toggle {
     position: fixed;
-    top: 15%;
-    right: 25%;
+    top: 12%;
+    right: 27%;
     background: none;
     border: none;
     font-size: 24px;
@@ -257,6 +257,19 @@ body.dark-mode footer {
     transform: scale(1.05);
     text-shadow: 0 0 10px rgba(235, 208, 5, 0.8);
 }
+
+#theme-toggle img {
+    width:60px;
+    height : 90px;
+    display: block;
+    transition: transform 0.7s ease, opacity 0.2s ease;
+    transform-style: preserve-3d;
+    }
+
+/* Flip class */
+#theme-toggle img.flip {
+    transform: rotateY(180deg);
+    }
 
 /*********************************************/
 .cursor-trail {
