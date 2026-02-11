@@ -29,7 +29,8 @@ h1 > a{
     text-align: center;
     font-weight: normal;
     display:inline-block;
-    font-size: larger;
+    font-size:large;
+    margin:0;
 }
 /************************************************/
 
@@ -38,7 +39,8 @@ nav{
     justify-content: center;
     align-items:center;
     gap: 15pc;
-    margin: 20px 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 nav > a{
@@ -46,6 +48,8 @@ nav > a{
     color: rgb(100, 100, 165);
     text-align: center;
     font-style: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 nav a:hover {
