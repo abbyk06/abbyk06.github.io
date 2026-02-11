@@ -123,8 +123,8 @@ main p {
 /* Images in the grid */
 .photo-grid a {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
 }
 
 .photo-grid img {
