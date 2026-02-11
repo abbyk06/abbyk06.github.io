@@ -124,7 +124,7 @@ main p {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     padding: 20px 0;
     margin: 0 auto;
     max-width: 100%;
@@ -141,7 +141,7 @@ main p {
     width: 100%;
     max-width: 200px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
     transition: transform 0.4s ease, filter 0.4s ease; /* smooth animation */
     object-fit: contain;
@@ -212,12 +212,6 @@ main p {
     width: 250px;          /* image size */
     height: auto;
     object-fit: cover;
-}
-
-.profile-pic:hover {
-    transition: filter 0.4s ease, box-shadow 0.6s ease;
-    cursor: url('icons/wand.png'), auto; /*custom cursor */
-    box-shadow: 0 0 20px rgba(235, 208, 5, 0.504); /* glow  */
 }
 
 .intro-text {
