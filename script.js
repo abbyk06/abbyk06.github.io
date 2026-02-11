@@ -1,3 +1,4 @@
+
 const toggle = document.getElementById("theme-toggle");
 
 // Load saved pref
