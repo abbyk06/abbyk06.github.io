@@ -395,3 +395,21 @@ body > .flip-card {
     padding: 10px;
     font-size: 14px;
     }
+/*********************************/
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Background image layer */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    /*background: url("icons/background.png") bottom / cover no-repeat;
+    opacity: 0.1;          /* adjust this (0.1 – 0.4 usually looks good) */
+    z-index: -1;            /* keeps it behind everything */
+    filter: blur(1px);
+
+}
