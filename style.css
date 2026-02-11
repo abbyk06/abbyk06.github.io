@@ -205,6 +205,12 @@ main p {
     object-fit: cover;
 }
 
+.profile-pic:hover {
+    transition: filter 0.4s ease, box-shadow 0.6s ease;
+    cursor: url('icons/wand.png'), auto; /* your custom cursor */
+    box-shadow: 0 0 20px rgba(235, 208, 5, 0.504); /* glow effect */
+}
+
 .intro-text {
     text-align: left;      /* text aligned left */
 }
