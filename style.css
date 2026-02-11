@@ -275,6 +275,11 @@ body.dark-mode footer {
 }
 
 /**************************************************/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .profile-flip {
     float: left;           /* image on the left */
     margin-right: 15px;    /* space between image and text */
