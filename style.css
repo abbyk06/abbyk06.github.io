@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(255, 255, 246);
+    background-color: rgb(255, 255, 255);
     font-family: "Lora", serif;
     margin:0;
     padding-top: 8%;
@@ -188,7 +188,7 @@ main p {
 
 /************************************/
 .magic:hover{
-    filter: brightness(1.1) drop-shadow(0 0 10px #c078df);
-    transform: scale(1.1);
+    filter: brightness(1.1) drop-shadow(0 0 5px #c078df);
+    transform: scale(1.05);
     transition: filter 1s ease, transform 0.2s ease;
 }
