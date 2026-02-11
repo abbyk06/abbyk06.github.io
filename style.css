@@ -181,3 +181,10 @@ main p {
 .gallery img:hover {
     transform: scale(1.05);  /* slight zoom on hover */
 }
+
+/************************************/
+.magic:hover{
+    filter: brightness(1.1) drop-shadow(0 0 10px #c078df);
+    transform: scale(1.1);
+    transition: filter 1s ease, transform 0.2s ease;
+}
