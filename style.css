@@ -25,7 +25,7 @@ body {
 h1,
 h1 > a{
     text-decoration: none;
-    color: rgb(85, 38, 136);
+    color: rgb(53, 38, 136);
     text-align: left;
     font-weight: normal;
     display:inline-block;
@@ -53,7 +53,7 @@ nav > a{
 }
 
 nav a:hover {
-    background-color: rgb(206, 189, 232);
+    background-color: rgba(178, 162, 223, 0.59);
     transform: scale(1.05);
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
 
@@ -67,7 +67,7 @@ nav a:hover {
 }
 
 .intro-text a:hover {
-    color: rgb(132, 109, 165);  /* hover color */
+    background-color: rgb(178, 162, 223, 0.59);  /* hover color */
 }
 
 main > a,
@@ -79,7 +79,7 @@ main p > a {
 
 main > a:hover,
 main p > a:hover {
-    background-color: rgb(206, 189, 232);
+    background-color: rgb(178, 162, 223, 0.59);
     transform: scale(1.05);
 }
 
@@ -91,7 +91,7 @@ main p > a:hover {
 }
 
 footer {
-    color: rgb(99, 24, 55);
+    color: rgb(100, 100, 165);
     font-size: smaller;
     animation: fadeUp 0.8s ease-in;
     padding-top: 0%;
@@ -105,11 +105,11 @@ footer p {
 
 footer >a {
     text-decoration: none;
-    color: rgb(99, 24, 55);
+    color: rgb(100, 100, 165);
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
 }
 footer a:hover {
-    background-color: rgb(226, 169, 193);
+    background-color: rgb(178, 162, 223, 0.59);
     transform: scale(1.05);
 }
 
