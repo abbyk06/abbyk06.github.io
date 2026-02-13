@@ -249,7 +249,7 @@ body.dark-mode footer {
     font-size: 24px;
     cursor: pointer;
     z-index: 10000;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    transition: transform 0.1s ease, text-shadow 0.3s ease;
 }
 
 #theme-toggle:hover {
