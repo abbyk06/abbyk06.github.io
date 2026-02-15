@@ -416,13 +416,7 @@ body::before {
 
 /**************************************************/
 .transform{
-    width: 250px;
-    height:250px;
-    float: left;           /* image on the left */
-    margin-right: 15px;    /* space between image and text */
-    margin-bottom: 10px;   /* space below image when text wraps */
-    object-fit: cover;
-    display: block;
+    position:relative;
 }
 .transform-inner {
     position: relative;
@@ -454,4 +448,27 @@ body::before {
 }
 .transform:hover .transform-back img {
     clip-path: inset(0 0 0 0);
+}
+
+.transform-profile{
+    width: 250px;
+    height:250px;
+    float: left;           /* image on the left */
+    margin-right: 15px;    /* space between image and text */
+    margin-bottom: 10px;   /* space below image when text wraps */
+    object-fit: cover;
+    display: block;
+}
+
+.transform-bird {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    padding: 0;
+    margin-top: -50px;
+}
+.transform-bird img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
