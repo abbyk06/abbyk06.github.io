@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'geminiFont';
+    src: url('/fonts/Gemini-Regular.woff2') format('woff2'),
+        url('/fonts/Gemini-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: rgb(255, 255, 255);
     font-family: 'Nunito', sans-serif;
@@ -6,7 +14,7 @@ body {
     padding-left: 25%;
     padding-right: 25%;
     text-align: left;
-    animation: fadeInUp 0.2s ease-in-out;
+    animation: fadeInUp 0.3s ease-in-out;
 }
 
 /************************************************/
@@ -27,6 +35,7 @@ h1 > a{
     text-decoration: none;
     color: rgb(53, 38, 136);
     text-align: left;
+    font-family: 'geminiFont';
     font-weight: normal;
     display:inline-block;
     font-size:large;
