@@ -35,10 +35,10 @@ h1 > a{
     text-decoration: none;
     color: rgb(53, 38, 136);
     text-align: left;
-    font-family: 'geminiFont';
+    font-family: 'geminiFont', sans-serif;
     font-weight: normal;
     display:inline-block;
-    font-size:large;
+    font-size:larger;
     margin:0;
 }
 /************************************************/
@@ -48,7 +48,7 @@ nav{
     justify-content: left;
     align-items:left;
     gap: 15pc;
-    margin-top: 5px;
+    margin-top: 2px;
     margin-bottom: 20px;
 }
 
