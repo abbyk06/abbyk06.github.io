@@ -6,9 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = panelData[key];
             if (!data) return;
 
-            // get position of the clicked link
-            const rect = e.target.getBoundingClientRect();
-
             const panel = document.getElementById("side-panel");
             const content = document.getElementById("panel-content");
 
@@ -17,9 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>${data.text}</p>
                 ${data.images.map(src => `<img src="${src}" alt="">`).join("")}
             `;
-
-            // position panel near the clicked word
-            panel.style.top = rect.top - 60 + "px";
 
             panel.classList.add("open");
         }
