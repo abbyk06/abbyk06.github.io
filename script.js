@@ -1,36 +1,46 @@
-const toggle = document.getElementById("theme-toggle");
-const icon = toggle.querySelector("img"); // select the image inside the button
+document.addEventListener("DOMContentLoaded", () => {
+    // NAV INJECTION
+    const nav = document.createElement("nav");
+    if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+        nav.innerHTML = `
+            <button id="theme-toggle">
+                <img src="icons/blackcat.png" alt="Toggle Theme">
+            </button>
+        `;
+    } else {
+        nav.innerHTML = `
+            <a href="index.html">&#8249; back</a>
+            <button id="theme-toggle">
+                <img src="icons/blackcat.png" alt="Toggle Theme">
+            </button>
+        `;
+    }
+    document.body.insertBefore(nav, document.body.firstChild);
 
-// Load saved preference
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    icon.src = "icons/whitecat.png"; // switch to white cat for dark mode
-}
-
-// Click to toggle
-toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    // Animate rotation
-    icon.style.transform = "rotateY(90deg)";
-    setTimeout(() => {
-        icon.src = document.body.classList.contains("dark-mode") ? "icons/whitecat.png" : "icons/blackcat.png";
-        icon.style.transform = "rotateY(0deg)";
-    }, 150);
-
-    // Save preference
-    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+    // THEME TOGGLE
+    const toggle = document.getElementById("theme-toggle");
+    const icon = toggle.querySelector("img");
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        icon.src = "icons/whitecat.png";
+    }
+    toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        icon.style.transform = "rotateY(90deg)";
+        setTimeout(() => {
+            icon.src = document.body.classList.contains("dark-mode")
+                ? "icons/whitecat.png"
+                : "icons/blackcat.png";
+            icon.style.transform = "rotateY(0deg)";
+        }, 150);
+        localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+    });
 });
 
-
-///////////////////////////////////////////////////////////////
+// CURSOR TRAIL
 const trail = document.querySelector(".cursor-trail");
-
-let mouseX = 0;
-let mouseY = 0;
-
-let trailX = 0;
-let trailY = 0;
+let mouseX = 0, mouseY = 0;
+let trailX = 0, trailY = 0;
 const ease = 0.06;
 
 document.addEventListener("mousemove", (e) => {
@@ -38,16 +48,13 @@ document.addEventListener("mousemove", (e) => {
     mouseY = e.clientY;
 });
 
-function animate() {
-    // Smooth glide
+function animateTrail() {
     trailX += (mouseX - trailX) * ease;
     trailY += (mouseY - trailY) * ease;
-
-    trail.style.left = trailX + "px";
-    trail.style.top = trailY + "px";
-
-    requestAnimationFrame(animate);
+    if (trail) {
+        trail.style.left = trailX + "px";
+        trail.style.top = trailY + "px";
+    }
+    requestAnimationFrame(animateTrail);
 }
-
-animate();
-
+animateTrail();
