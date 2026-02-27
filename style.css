@@ -56,7 +56,7 @@ nav{
 
 nav > a{
     text-decoration: none;
-    color: rgb(100, 100, 165);
+    color: rgb(57, 57, 126);
     text-align: left;
     font-style: normal;
     margin-top: 0;
@@ -64,34 +64,28 @@ nav > a{
 }
 
 nav a:hover {
-    background-color: rgba(178, 162, 223, 0.59);
-    transform: scale(1.05);
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
 
 }
 /************************************************/
 
 .intro-text a {
-    color: rgb(100, 100, 165); /* original color */
+    color: rgb(50, 50, 100); /* original color */
     text-decoration: none;      /* optional, removes underline */
     transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.intro-text a:hover {
-    background-color: rgb(178, 162, 223, 0.59);  /* hover color */
 }
 
 main > a,
 main p > a {
     text-decoration: none;
-    color: rgb(100, 100, 165);
+    color: rgb(50, 50, 100);
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
 }
 
 main > a:hover,
 main p > a:hover {
-    background-color: rgb(178, 162, 223, 0.59);
     transform: scale(1.05);
+    font-weight: bolder;
 }
 
 /************************************************/
@@ -119,7 +113,6 @@ footer >a {
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
 }
 footer a:hover {
-    background-color: rgb(178, 162, 223, 0.59);
     transform: scale(1.05);
 }
 
@@ -493,7 +486,7 @@ body::before {
 }
 
 .nav-section a:hover {
-    background-color: rgba(178, 162, 223, 0.59);
+    font-weight: bolder;
 }
 
 .side-panel {
