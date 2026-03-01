@@ -58,3 +58,16 @@ function animateTrail() {
     requestAnimationFrame(animateTrail);
 }
 animateTrail();
+
+////music
+function toggleMusic() {
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('play-btn');
+    if (music.paused) {
+        music.play();
+        btn.textContent = '⏸';
+    } else {
+        music.pause();
+        btn.textContent = '▶';
+    }
+}

@@ -53,18 +53,22 @@
 
 
 <div style="padding-left: 37%;">
-    <div class="transform transform-bird">
-        <div class="transform-inner">
-            <div class="transform-front">
-                <img src="photos/bird.png" alt="Bird">
-            </div>
-            <div class="transform-back">
-                <img src="photos/ascii-bird.png" alt="ASCII Bird">
+    <div style="display: inline-block; text-align: center;">
+        <div class="transform transform-bird">
+            <div class="transform-inner">
+                <div class="transform-front">
+                    <img src="photos/bird.png" alt="Bird">
+                </div>
+                <div class="transform-back">
+                    <img src="photos/ascii-bird.png" alt="ASCII Bird">
+                </div>
             </div>
         </div>
+
+        <audio id="bg-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+        <button id="play-btn" onclick="toggleMusic()">▶</button>
     </div>
 </div>
-
 
 <script src="js/panels.js"></script>
 <script src="js/panel.js"></script>
