@@ -84,7 +84,7 @@ main p > a {
 
 main > a:hover,
 main p > a:hover {
-    transform: scale(1.05);
+    transform: scale(1.0);
     font-weight: bolder;
 }
 
@@ -230,19 +230,19 @@ main p {
 /************************************/
 body.dark-mode {
     background-color: #121212;
-    color: #e8e6e3;
+    color: #f3e1ff;
 }
 
 body.dark-mode a {
-    color: #d2bdf6;
+    color: #f3e1ff;
 }
 
 body.dark-mode nav a:hover {
-    background-color: #2a1f3d;
+    background-color: #f3e1ff;
 }
 
 body.dark-mode footer {
-    color: #d2bdf6;
+    color: #f3e1ff;
 }
 
 #theme-toggle {
@@ -475,14 +475,14 @@ body::before {
 
 /****************************/
 .nav-section {
-    border-left: 2px solid #621a68;
+    border-left: 2px solid #df7aa9;
     margin: 0;
     padding-left: 16px;
     margin-top: 4px;
 }
 .nav-section a{
     text-decoration: none;
-    color: inherit;
+    color: 50, 50, 100;
 }
 
 .nav-section a:hover {
