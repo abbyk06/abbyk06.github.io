@@ -15,7 +15,7 @@ body {
     padding-left: 30%;
     padding-right: 30%;
     text-align: left;
-    animation: fadeInUp 0.3s ease-in-out;
+    animation: fadeInUp 1s ease-in-out;
     position: relative;
 }
 
@@ -98,7 +98,7 @@ main p > a:hover {
 footer {
     color: rgb(100, 100, 165);
     font-size: smaller;
-    animation: fadeUp 0.8s ease-in;
+    animation: fadeUp 1s ease-in;
     padding-top: 0%;
 }
 
