@@ -494,8 +494,7 @@ body::before {
     left: 39%;
     width: 375px;
     max-height: 40vh;
-    background: rgba(200, 180, 220, 0.758);
-
+    background: rgba(206, 192, 220, 0.758);
     overflow-y: auto;
     padding: 24px;
     z-index: 10001;
