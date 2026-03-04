@@ -560,7 +560,7 @@ body::before {
     height: 32px;
     cursor: pointer;
     font-size: 12px;
-    opacity: 0.6;
+    opacity: 0.3;
     transition: opacity 0.2s;
     margin-left: 80px;
 }
