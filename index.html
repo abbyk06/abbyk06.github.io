@@ -52,24 +52,21 @@
     <div id="panel-overlay" class="panel-overlay"></div>
 
 
-<div style="padding-left: 37%;">
-    <div style="display: inline-block; text-align: center;">
-        <div class="transform transform-bird">
-            <div class="transform-inner">
-                <div class="transform-front">
-                    <img src="index-photos/bird-black.png" alt="Bird">
-                </div>
-                <div class="transform-back">
-                    <img src="index-photos/asc-bird-black.png" alt="ASCII Bird">
-                </div>
+<div style="display: flex; align-items: center; margin-top: -40px;">
+    <div class="transform transform-bird" style="margin-left: 32%;">
+        <div class="transform-inner">
+            <div class="transform-front">
+                <img src="index-photos/bird-black.png" alt="Bird">
+            </div>
+            <div class="transform-back">
+                <img src="index-photos/asc-bird-black.png" alt="ASCII Bird">
             </div>
         </div>
-
-        <audio id="bg-music" src="audio/chasingKou.mp3" loop></audio>
-        <button id="play-btn" onclick="toggleMusic()">
-            <img id="play-icon" src="index-photos/play-black.png" alt="Play">
-        </button>
     </div>
+
+    <audio id="bg-music" src="audio/chasingKou.mp3" loop></audio>
+    <button id="play-btn" onclick="toggleMusic()" style="margin-left: auto; margin-right: 5%; align-self: flex-start; margin-top: -20px;">        <img id="play-icon" src="index-photos/play-black.png" alt="Play">
+    </button>
 </div>
 
 <script src="js/panels.js"></script>

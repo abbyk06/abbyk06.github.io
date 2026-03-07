@@ -227,19 +227,23 @@ main p {
 /************************************/
 body.dark-mode {
     background-color: #121212;
-    color: #f3e1ff;
+    color: #ffffff;
 }
 
 body.dark-mode a {
-    color: #f3e1ff;
+    color: #ffffff;
 }
 
 body.dark-mode nav a:hover {
-    background-color: #f3e1ff;
+    background-color: #ffffff;
 }
 
 body.dark-mode footer {
-    color: #f3e1ff;
+    color: #ffffff;
+}
+
+body.dark-mode .nav-section {
+    border-left: 2px solid #ffffff;
 }
 
 #theme-toggle {
@@ -478,7 +482,7 @@ body::before {
 
 /****************************/
 .nav-section {
-    border-left: 2px solid #df7aa9;
+    border-left: 2px solid #000000;
     margin: 0;
     padding-left: 16px;
     margin-top: 4px;
@@ -496,9 +500,9 @@ body::before {
     position: fixed;
     top: 30%;
     left: 39%;
-    width: 375px;
-    max-height: 40vh;
-    background: rgba(206, 192, 220, 0.758);
+    width: 350px;
+    max-height: 30vh;
+    background: rgba(206, 192, 220, 0);
     overflow-y: auto;
     padding: 24px;
     z-index: 10001;
@@ -508,6 +512,8 @@ body::before {
     transform-origin: left;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
+
 
 .side-panel.open {
     opacity: 1;
@@ -520,12 +526,9 @@ body::before {
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    color: rgb(100, 100, 165);
     padding: 0;
-}
-
-#close-panel:hover {
-    color: #621a68;
+    margin-left:auto;
+    display:block;
 }
 
 /* Side panel scrollbar */
@@ -539,23 +542,30 @@ body::before {
 }
 
 .side-panel::-webkit-scrollbar-thumb {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.345);
     border-radius: 10px;
-    transition: background-color 0.3s ease;
 }
 
-.side-panel:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(130, 80, 180, 0.6);
+.side-panel::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.59);
 }
 
-.side-panel:hover::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(130, 80, 180, 0.9);
+body.dark-mode #close-panel {
+    color: #ffffff;
+}
+
+body.dark-mode .side-panel::-webkit-scrollbar-thumb {
+    background-color: rgba(244, 244, 244, 0.345);
+}
+
+body.dark-mode .side-panel::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.675);
 }
 
 /*************music************/
 #play-btn {
     display: block;
-    margin-top: 2px;
+    margin-top: -20px;
     background: none;
     border: none;
     width: 75px;
@@ -570,6 +580,11 @@ body::before {
     height: 100%;
     object-fit: contain;
     transition: transform 0.3s ease;
+}
+
+#play-btn:hover img {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
 }
 
 #play-btn img.spinning {
