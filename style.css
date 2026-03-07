@@ -68,23 +68,20 @@ nav a:hover {
 
 }
 /************************************************/
-
-.intro-text a {
-    color: rgb(50, 50, 100); /* original color */
-    text-decoration: none;      /* optional, removes underline */
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
+.intro-text a,
 main > a,
-main p > a {
+main p > a,
+main strong,
+main p,
+.nav-section a {
+    color: inherit;
     text-decoration: none;
-    color: rgb(50, 50, 100);
     transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
 }
 
 main > a:hover,
-main p > a:hover {
-    transform: scale(1.0);
+main p > a:hover,
+.nav-section a:hover {
     font-weight: bolder;
 }
 
@@ -439,14 +436,21 @@ body::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     clip-path: inset(0 100% 0 0 );
-
     transition: clip-path 0.8s steps(20);
 }
+
 .transform:hover .transform-back img {
     clip-path: inset(0 0 0 0);
 }
+
+.transform-front img {
+    transition: opacity 0.2s steps(15);
+}
+.transform:hover .transform-front img {
+    opacity: 0;
+}
+
 
 .transform-profile{
     width: 250px;
@@ -565,5 +569,16 @@ body::before {
 }
 
 #play-btn:hover {
+    opacity: 1;
+}
+
+/* Fully visible in dark mode */
+body.dark-mode #play-btn {
+    opacity: 0.85;
+    color: #f3e1ff;
+    border-color: #f3e1ff;
+}
+
+body.dark-mode #play-btn:hover {
     opacity: 1;
 }

@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
         nav.innerHTML = `
             <button id="theme-toggle">
-                <img src="icons/blackcat.png" alt="Toggle Theme">
+                <img src="index-photos/blackcat.png" alt="Toggle Theme">
             </button>
         `;
     } else {
         nav.innerHTML = `
             <a href="index.html">&#8249; back</a>
             <button id="theme-toggle">
-                <img src="icons/blackcat.png" alt="Toggle Theme">
+                <img src="index-photos/blackcat.png" alt="Toggle Theme">
             </button>
         `;
     }
@@ -20,20 +20,39 @@ document.addEventListener("DOMContentLoaded", () => {
     // THEME TOGGLE
     const toggle = document.getElementById("theme-toggle");
     const icon = toggle.querySelector("img");
+
+    // Helper: apply dark mode visuals (bird + cat icon)
+    function applyDarkMode(isDark) {
+        const birdFront = document.querySelector(".transform-front img");
+        const birdBack  = document.querySelector(".transform-back img");
+        if (isDark) {
+            icon.src = "index-photos/whitecat.png";
+            if (birdFront) birdFront.src = "index-photos/bird-white.png";
+            if (birdBack)  birdBack.src  = "index-photos/asc-bird-white.png";
+        } else {
+            icon.src = "index-photos/blackcat.png";
+            if (birdFront) birdFront.src = "index-photos/bird-black.png";
+            if (birdBack)  birdBack.src  = "index-photos/asc-bird-black.png";
+        }
+    }
+
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
-        icon.src = "icons/whitecat.png";
+        applyDarkMode(true);
     }
+
+    // apply on toggle click
     toggle.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+
         icon.style.transform = "rotateY(90deg)";
         setTimeout(() => {
-            icon.src = document.body.classList.contains("dark-mode")
-                ? "icons/whitecat.png"
-                : "icons/blackcat.png";
+            applyDarkMode(isDark);
             icon.style.transform = "rotateY(0deg)";
         }, 150);
-        localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+
+        localStorage.setItem("theme", isDark ? "dark" : "light");
     });
 });
 
