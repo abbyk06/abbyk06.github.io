@@ -34,6 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
             if (birdFront) birdFront.src = "index-photos/bird-black.png";
             if (birdBack)  birdBack.src  = "index-photos/asc-bird-black.png";
         }
+        const playIcon = document.getElementById("play-icon");
+        if (playIcon) {
+            const isPaused = document.getElementById("bg-music").paused;
+            playIcon.src = isDark
+            ? (isPaused ? "index-photos/play-white.png" : "index-photos/pause-white.png")
+            : (isPaused ? "index-photos/play-black.png" : "index-photos/pause-black.png");
+        }
     }
 
     if (localStorage.getItem("theme") === "dark") {
@@ -81,12 +88,19 @@ animateTrail();
 ////music
 function toggleMusic() {
     const music = document.getElementById('bg-music');
-    const btn = document.getElementById('play-btn');
-    if (music.paused) {
-        music.play();
-        btn.textContent = '⏸';
-    } else {
-        music.pause();
-        btn.textContent = '▶';
-    }
+    const icon = document.getElementById('play-icon');
+    const isDark = document.body.classList.contains("dark-mode");
+
+    icon.classList.add("spinning")
+
+    setTimeout(() => {
+        if (music.paused) {
+            music.play();
+            icon.src = isDark ? "index-photos/pause-white.png" : "index-photos/pause-black.png";
+        } else {
+            music.pause();
+            icon.src = isDark ? "index-photos/play-white.png" : "index-photos/play-black.png";
+        }
+        icon.classList.remove("spinning");
+    }, 150);
 }

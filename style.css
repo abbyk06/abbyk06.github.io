@@ -557,28 +557,25 @@ body::before {
     display: block;
     margin-top: 2px;
     background: none;
-    border: 1px solid currentColor;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    border: none;
+    width: 75px;
+    height: 75px;
     cursor: pointer;
-    font-size: 12px;
-    opacity: 0.3;
-    transition: opacity 0.2s;
+    padding: 0;
     margin-left: 80px;
 }
 
-#play-btn:hover {
-    opacity: 1;
+#play-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-/* Fully visible in dark mode */
+#play-btn img.spinning {
+    transform: rotate(90deg);
+}
+
 body.dark-mode #play-btn {
     opacity: 0.85;
-    color: #f3e1ff;
-    border-color: #f3e1ff;
-}
-
-body.dark-mode #play-btn:hover {
-    opacity: 1;
 }
