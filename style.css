@@ -208,7 +208,6 @@ main p {
 
 /************************************/
 .profile-pic {
-    float: left;           /* image on the left */
     margin-right: 15px;    /* space between image and text */
     margin-bottom: 10px;   /* space below image when text wraps */
     width: 250px;          /* image size */
@@ -219,6 +218,7 @@ main p {
 
 .intro-text {
     text-align: left;      /* text aligned left */
+    padding-left: 0px;
 }
 
 /* Clear floats after the container */
@@ -226,6 +226,12 @@ main p {
     content: "";
     display: block;
     clear: both;
+}
+.intro-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
 }
 
 /************************************/
