@@ -56,7 +56,6 @@ nav{
 
 nav > a{
     text-decoration: none;
-    color: rgb(57, 57, 126);
     text-align: left;
     font-style: normal;
     margin-top: 0;
@@ -233,8 +232,8 @@ body.dark-mode a {
     color: #ffffff;
 }
 
-body.dark-mode nav a:hover {
-    background-color: #ffffff;
+body.dark-mode nav > a{
+    color: #ffffff;
 }
 
 body.dark-mode footer {
