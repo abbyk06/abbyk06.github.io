@@ -598,3 +598,63 @@ body.dark-mode .side-panel::-webkit-scrollbar-thumb:hover {
 body.dark-mode #play-btn {
     opacity: 0.85;
 }
+
+
+
+/*//////////////////////////////////////*/
+@media (max-width: 768px) {
+
+    body {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 8%;
+    }
+
+    /* 1 column gallery */
+    .gallery {
+        grid-template-columns: 1fr;
+        width: 90vw;
+        left: 0;
+        transform: none;
+        margin: 20px auto;
+    }
+
+    /* photo grid smaller */
+    .photo-grid img {
+        max-width: 130px;
+    }
+
+    /* cat toggle reposition */
+    #theme-toggle {
+        top: 10px;
+        left: auto;
+        right: 5%;
+        position: fixed;
+    }
+
+    /* bird + music row */
+    .transform-bird {
+        width: 120px;
+        height: 120px;
+        margin-top: 0;
+    }
+
+    #play-btn {
+        width: 50px;
+        height: 50px;
+        margin-left: 20px;
+        margin-top: 0;
+    }
+
+    /* side panel full width */
+    .side-panel {
+        left: 5%;
+        width: 90%;
+        top: 20%;
+    }
+
+    /* nav back button */
+    nav > a {
+        font-size: 0.9rem;
+    }
+}
