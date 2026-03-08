@@ -368,7 +368,6 @@ body > .flip-card {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -376,7 +375,7 @@ body > .flip-card {
 .flip-front img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:cover;
 }
 
 /* Back (content) */
@@ -394,6 +393,10 @@ body > .flip-card {
     transform: rotateY(180deg);
     padding: 10px;
     font-size: 14px;
+}
+
+.flip-back div {
+    text-align: center;
 }
 
 /*********************************/
