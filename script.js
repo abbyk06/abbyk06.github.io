@@ -1,54 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
     // NAV INJECTION
+    const depth = window.location.pathname.split('/').filter(Boolean).length;
+    const prefix = depth <= 1 ? "" : "../".repeat(depth - 1);
+
+    const isRoot = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+
     const nav = document.createElement("nav");
-    if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+    if (isRoot) {
         nav.innerHTML = `
             <button id="theme-toggle">
-                <img src="index-photos/blackcat.png" alt="Toggle Theme">
+                <img src="${prefix}index-photos/blackcat.png" alt="Toggle Theme">
             </button>
         `;
     } else {
         nav.innerHTML = `
-            <a href="index.html">&#8249; back</a>
+            <a href="${prefix}index.html">&#8249; back</a>
             <button id="theme-toggle">
-                <img src="index-photos/blackcat.png" alt="Toggle Theme">
+                <img src="${prefix}index-photos/blackcat.png" alt="Toggle Theme">
             </button>
         `;
     }
     document.body.insertBefore(nav, document.body.firstChild);
 
-    // THEME TOGGLE
     const toggle = document.getElementById("theme-toggle");
     const icon = toggle.querySelector("img");
 
-    // Helper: apply dark mode visuals (bird + cat icon)
+    // Swaps cat icon + both bird images (front and back)
     function applyDarkMode(isDark) {
         const birdFront = document.querySelector(".transform-front img");
         const birdBack  = document.querySelector(".transform-back img");
+
         if (isDark) {
-            icon.src = "index-photos/whitecat.png";
-            if (birdFront) birdFront.src = "index-photos/bird-white.png";
-            if (birdBack)  birdBack.src  = "index-photos/asc-bird-white.png";
+            icon.src = `${prefix}index-photos/whitecat.png`;
+            if (birdFront) birdFront.src = `${prefix}index-photos/bird-white.png`;
+            if (birdBack)  birdBack.src  = `${prefix}index-photos/asc-bird-white.png`;
         } else {
-            icon.src = "index-photos/blackcat.png";
-            if (birdFront) birdFront.src = "index-photos/bird-black.png";
-            if (birdBack)  birdBack.src  = "index-photos/asc-bird-black.png";
+            icon.src = `${prefix}index-photos/blackcat.png`;
+            if (birdFront) birdFront.src = `${prefix}index-photos/bird-black.png`;
+            if (birdBack)  birdBack.src  = `${prefix}index-photos/asc-bird-black.png`;
         }
+        console.log(window.location.pathname);
+console.log(depth);
+console.log(prefix);
+
+        // Update play/pause icon if it exists
         const playIcon = document.getElementById("play-icon");
         if (playIcon) {
-            const isPaused = document.getElementById("bg-music").paused;
+            const isPaused = document.getElementById("bg-music")?.paused ?? true;
             playIcon.src = isDark
-            ? (isPaused ? "index-photos/play-white.png" : "index-photos/pause-white.png")
-            : (isPaused ? "index-photos/play-black.png" : "index-photos/pause-black.png");
+                ? (isPaused ? `${prefix}index-photos/play-white.png` : `${prefix}index-photos/pause-white.png`)
+                : (isPaused ? `${prefix}index-photos/play-black.png` : `${prefix}index-photos/pause-black.png`);
         }
     }
 
+    // Apply on page load
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
         applyDarkMode(true);
     }
 
-    // apply on toggle click
+    // Apply on toggle click
     toggle.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         const isDark = document.body.classList.contains("dark-mode");
@@ -85,13 +96,13 @@ function animateTrail() {
 }
 animateTrail();
 
-////music
+// MUSIC
 function toggleMusic() {
     const music = document.getElementById('bg-music');
     const icon = document.getElementById('play-icon');
     const isDark = document.body.classList.contains("dark-mode");
 
-    icon.classList.add("spinning")
+    icon.classList.add("spinning");
 
     setTimeout(() => {
         if (music.paused) {

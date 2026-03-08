@@ -33,16 +33,21 @@ body {
     }
 }
 /************************************************/
-h1,
-h1 > a{
+h1, h1 > a {
     text-decoration: none;
-    color: rgb(53, 38, 136);
+    color: rgb(0, 0, 0);
     text-align: left;
     font-weight: lighter;
-    display:inline-block;
-    font-size:2rem;
-    margin:0;
+    display: inline-block;
+    font-size: 2rem;
+    margin: 0;
 }
+
+body.dark-mode h1,
+body.dark-mode h1 > a {
+    color: #ffffff;
+}
+
 /************************************************/
 
 nav{
@@ -55,7 +60,7 @@ nav{
 }
 
 nav > a{
-    color:#ffffff;
+    color:#000000;
     text-decoration: none;
     text-align: left;
     font-style: normal;
