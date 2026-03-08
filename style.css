@@ -337,37 +337,24 @@ body.dark-mode .nav-section {
     backface-visibility: hidden; /* hide back when facing front */
     overflow: hidden;
 }
-
-/* Back side (content) */
-.flip-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(105, 85, 127);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    backface-visibility: hidden; /* hide front when facing back */
-    transform: rotateY(180deg);
-    padding: 10px;
-    font-size: 14px;
-}
-
 /************************************/
 /*flip for projects*/
 body > .flip-card {
   display: inline-block; /* cards in a row */
     margin: 10px;
+    align-items: center;
 }
 
 /* Flip card container */
 .flip-card {
     background-color: transparent;
-    width: 250px; /* adjust size */
-    height: 250px;
-  perspective: 1000px; /* 3D effect */
+    width: 400px;
+    height: 300px;
+    perspective: 1000px; /* 3D effect */
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;        /* ← centers it */
+    margin-bottom: 20px;   /* ← space between cards */
 }
 /* Flip on hover */
 .flip-card:hover .flip-inner {
@@ -392,18 +379,23 @@ body > .flip-card {
     object-fit: cover;
 }
 
-/* Back: content */
+/* Back (content) */
 .flip-back {
-    background-color: rgba(85, 38, 136, 0.9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(208, 191, 228);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    backface-visibility: hidden; /* hide front when facing back */
     transform: rotateY(180deg);
     padding: 10px;
     font-size: 14px;
 }
+
 /*********************************/
 /* Background image layer */
 body::before {
@@ -414,7 +406,6 @@ body::before {
     opacity: 0.1;          /* adjust this (0.1 – 0.4 usually looks good) */
     z-index: -1;            /* keeps it behind everything */
     filter: blur(1px);
-
 }
 
 /**************************************************/

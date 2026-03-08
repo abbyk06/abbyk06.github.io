@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     } else {
         nav.innerHTML = `
-            <a href="${prefix}index.html">&#8249; back</a>
+            <a href="${prefix}index.html">&#8619; </a>
             <button id="theme-toggle">
                 <img src="${prefix}index-photos/blackcat.png" alt="Toggle Theme">
             </button>
