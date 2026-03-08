@@ -187,7 +187,6 @@ main p {
 .gallery img {
     width: 100%;         /* fills the grid cell */
     height: auto;        /* keeps aspect ratio */
-    border-radius: 10px;
     transition: transform 0.4s ease, filter 0.4s ease;
 }
 
