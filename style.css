@@ -121,6 +121,29 @@ footer a:hover {
 main p {
     text-align: left;
 }
+/************************************************/
+.name-hover {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+
+.peeking-kitty {
+    position: absolute;
+    width: 60px;
+    height: auto;
+    bottom: 85%;
+    left: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    pointer-events: none;
+}
+
+.name-hover:hover .peeking-kitty {
+    opacity: 1;
+    transform: translateY(0px);
+}
 
 /************************************************/
 /* Photo grid layout */

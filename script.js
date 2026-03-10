@@ -29,15 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
     function applyDarkMode(isDark) {
         const birdFront = document.querySelector(".transform-front img");
         const birdBack  = document.querySelector(".transform-back img");
+        const kitty = document.querySelector(".peeking-kitty");
 
         if (isDark) {
             icon.src = `${prefix}index-photos/whitecat.png`;
             if (birdFront) birdFront.src = `${prefix}index-photos/bird-white.png`;
             if (birdBack)  birdBack.src  = `${prefix}index-photos/asc-bird-white.png`;
+            if (kitty)     kitty.src     = `${prefix}index-photos/kitty-white.png`;
         } else {
             icon.src = `${prefix}index-photos/blackcat.png`;
             if (birdFront) birdFront.src = `${prefix}index-photos/bird-black.png`;
             if (birdBack)  birdBack.src  = `${prefix}index-photos/asc-bird-black.png`;
+            if (kitty)     kitty.src     = `${prefix}index-photos/kitty-black.png`;
         }
         console.log(window.location.pathname);
 console.log(depth);
