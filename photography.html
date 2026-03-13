@@ -14,29 +14,36 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <script src="script.js" defer></script>
-
+    <script src="js/loader.js" defer></script>
 </head>
 <body>
-    <div class="cursor-trail"></div>
-    <header>
-        <h1><a href="index.html">Pick a camera for more :)</a></h1>
-    </header>
-    
-<script src="nav.js"></script>
 
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
 
-<main>
-<div class="photo-grid">
-    <a href = "camera/pages/elph180.html">
-        <img src="camera/photos/elph180.png" alt=""></a>
-    <a href = "camera/pages/sx700hs.html">
-        <img src="camera/photos/sx700hs.png" alt=""></a>
-    <a href = "camera/pages/stylus120.html">
-        <img src="camera/photos/stylus120.png" alt=""></a>
-    <a href = "camera/pages/sd870.html">
-        <img src="camera/photos/sd870.png" alt=""></a>
-</div>
-</main>
+    <div id="content">
+        <div class="cursor-trail"></div>
+        <header>
+            <h1><a href="index.html">Pick a camera for more :)</a></h1>
+        </header>
+
+        <script src="nav.js"></script>
+
+        <main>
+            <div class="photo-grid">
+                <a href="camera/pages/elph180.html">
+                    <img src="camera/photos/elph180.png" alt=""></a>
+                <a href="camera/pages/sx700hs.html">
+                    <img src="camera/photos/sx700hs.png" alt=""></a>
+                <a href="camera/pages/stylus120.html">
+                    <img src="camera/photos/stylus120.png" alt=""></a>
+                <a href="camera/pages/sd870.html">
+                    <img src="camera/photos/sd870.png" alt=""></a>
+            </div>
+        </main>
+    </div>
 
 </body>
 </html>

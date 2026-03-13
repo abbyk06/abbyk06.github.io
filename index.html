@@ -9,69 +9,69 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/icons//favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
     <link rel="shortcut icon" href="/icons/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <script src="script.js" defer></script>
-
+    <script src="js/loader.js" defer></script>
 </head>
 
 <body>
-    <div class="cursor-trail"></div>
+    <div id="content">
+        <div class="cursor-trail"></div>
 
-<main>
-    <div class="intro-text">
-        <p><span class="name-hover">Hi, I'm Abby!
-            <img src="index-photos/kitty-black.png" alt="" class="peeking-kitty">
-        </span></p>
-    </div>
-
-    <p><a href = 'about.html'>About</a></p>
-
-    <p>Work</p>
-    <div class="nav-section">
-        <p><a href="#" class="panel-link" data-panel="ceed">Ceed</a></p>
-        <p><a href="#" class="panel-link" data-panel="uottahack">uOttaHack</a></p>
-        <p><a href="#" class="panel-link" data-panel="technovation">Technovation</a></p>
-        <p><a href="#" class="panel-link" data-panel="outreach">Faculty of Eng</a></p>
-    </div>
-
-    <p>Other</p>
-    <div class="nav-section">
-        <p><a href="projects.html">Projects</a></p>
-        <p><a href="photography.html">Photography</a></p>
-    </div>
-    
-</main>
-
-    <!-- Side panel -->
-    <div id="side-panel" class="side-panel">
-        <button id="close-panel">—</button>
-        <div id="panel-content"></div>
-    </div>
-    <div id="panel-overlay" class="panel-overlay"></div>
-
-
-<div style="display: flex; align-items: center; margin-top: -40px;">
-    <div class="transform transform-bird" style="margin-left: 32%;">
-        <div class="transform-inner">
-            <div class="transform-front">
-                <img src="index-photos/bird-black.png" alt="Bird">
+        <main>
+            <div class="intro-text">
+                <p><span class="name-hover">Hi, I'm Abby!
+                    <img src="index-photos/kitty-black.png" alt="" class="peeking-kitty">
+                </span></p>
             </div>
-            <div class="transform-back">
-                <img src="index-photos/asc-bird-black.png" alt="ASCII Bird">
+
+            <p><a href="about.html">About</a></p>
+
+            <p>Work</p>
+            <div class="nav-section">
+                <p><a href="#" class="panel-link" data-panel="ceed">Ceed</a></p>
+                <p><a href="#" class="panel-link" data-panel="uottahack">uOttaHack</a></p>
+                <p><a href="#" class="panel-link" data-panel="technovation">Technovation</a></p>
+                <p><a href="#" class="panel-link" data-panel="outreach">Faculty of Eng</a></p>
             </div>
+
+            <p>Other</p>
+            <div class="nav-section">
+                <p><a href="projects.html">Projects</a></p>
+                <p><a href="photography.html">Photography</a></p>
+            </div>
+        </main>
+
+        <!-- Side panel -->
+        <div id="side-panel" class="side-panel">
+            <button id="close-panel">—</button>
+            <div id="panel-content"></div>
         </div>
+        <div id="panel-overlay" class="panel-overlay"></div>
+
+        <div style="display: flex; align-items: center; margin-top: -40px;">
+            <div class="transform transform-bird" style="margin-left: 32%;">
+                <div class="transform-inner">
+                    <div class="transform-front">
+                        <img src="index-photos/bird-black.png" alt="Bird">
+                    </div>
+                    <div class="transform-back">
+                        <img src="index-photos/asc-bird-black.png" alt="ASCII Bird">
+                    </div>
+                </div>
+            </div>
+
+            <audio id="bg-music" src="audio/chasingKou.mp3" loop></audio>
+            <button id="play-btn" onclick="toggleMusic()" style="margin-left: auto; margin-right: 5%; align-self: flex-start; margin-top: -20px;">
+                <img id="play-icon" src="index-photos/play-black.png" alt="Play">
+            </button>
+        </div>
+
+        <script src="js/panels.js"></script>
+        <script src="js/panel.js"></script>
     </div>
-
-    <audio id="bg-music" src="audio/chasingKou.mp3" loop></audio>
-    <button id="play-btn" onclick="toggleMusic()" style="margin-left: auto; margin-right: 5%; align-self: flex-start; margin-top: -20px;">        <img id="play-icon" src="index-photos/play-black.png" alt="Play">
-    </button>
-</div>
-
-<script src="js/panels.js"></script>
-<script src="js/panel.js"></script>
-
 </body>
 </html>
