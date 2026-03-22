@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             title: "TouchDesigner #1",
-            description: "First TouchDesigner project! Canada Day fireworks reconstructed and overlaid as a 3D particle system, displaced by brightness. Built using TOP to SOP; converted 2D video texture into 3D point geometry.",
+            description: "Canada Day fireworks reconstructed and overlaid as a 3D particle system, displaced by brightness. Built using TOP to SOP; converted 2D video texture into 3D point geometry.",
             thumb: "project-files/touchdesigner1.webm",
             type: "video",
             links: []
