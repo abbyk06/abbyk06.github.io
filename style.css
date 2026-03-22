@@ -524,8 +524,8 @@ body::before {
 
 .side-panel {
     position: fixed;
-    top: 30%;
-    left: 39%;
+    top: 15%;
+    left: 23%;
     width: 350px;
     max-height: 30vh;
     background: rgba(206, 192, 220, 0);

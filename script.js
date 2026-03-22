@@ -33,22 +33,33 @@
 
             if (isDark) {
                 icon.src = `${prefix}index-photos/whitecat.png`;
-                if (birdFront)   birdFront.src   = `${prefix}index-photos/bird-white.png`;
-                if (birdBack)    birdBack.src    = `${prefix}index-photos/asc-bird-white.png`;
-                if (kitty)       kitty.src       = `${prefix}index-photos/kitty-white.png`;
-                if (nameVideo)   nameVideo.src   = `${prefix}index-photos/name-white.mp4`;
+                if (birdFront) birdFront.src = `${prefix}index-photos/bird-white.png`;
+                if (birdBack)  birdBack.src  = `${prefix}index-photos/asc-bird-white.png`;
+                if (kitty)     kitty.src     = `${prefix}index-photos/kitty-white.png`;
             } else {
                 icon.src = `${prefix}index-photos/blackcat.png`;
-                if (birdFront)   birdFront.src   = `${prefix}index-photos/bird-black.png`;
-                if (birdBack)    birdBack.src    = `${prefix}index-photos/asc-bird-black.png`;
-                if (kitty)       kitty.src       = `${prefix}index-photos/kitty-black.png`;
-                if (nameVideo)   nameVideo.src   = `${prefix}index-photos/name-black.mp4`;
+                if (birdFront) birdFront.src = `${prefix}index-photos/bird-black.png`;
+                if (birdBack)  birdBack.src  = `${prefix}index-photos/asc-bird-black.png`;
+                if (kitty)     kitty.src     = `${prefix}index-photos/kitty-black.png`;
             }
-            console.log(window.location.pathname);
-    console.log(depth);
-    console.log(prefix);
 
-            // Update play/pause icon if it exists
+            // Video swap — same logic for both directions
+            if (nameVideo) {
+                const newSrc = `${prefix}index-photos/${isDark ? "name-white" : "name-black"}.mp4`;
+                nameVideo.pause();
+                nameVideo.removeAttribute("src");
+                nameVideo.load();
+                nameVideo.src = newSrc;
+                nameVideo.load();
+                nameVideo.addEventListener("canplay", () => {
+                    nameVideo.play();
+                }, { once: true });
+                nameVideo.addEventListener("ended", () => {
+                    nameVideo.currentTime = nameVideo.duration - 0.001;
+                    nameVideo.pause();
+                }, { once: true });
+            }
+
             const playIcon = document.getElementById("play-icon");
             if (playIcon) {
                 const isPaused = document.getElementById("bg-music")?.paused ?? true;
@@ -122,7 +133,14 @@
     }
 
     const video = document.getElementById("name-video");
-    video.addEventListener("ended", () => {
-        video.currentTime = video.duration;
+
+    setTimeout(() => {
+        video.play();
+    }, 1000);
+
+
+    video.addEventListener("loadedmetadata", () => {
+        if (video.currentTime === 0 && !video.played.length) return;
+        video.currentTime = video.duration - 0.001;
         video.pause();
     });

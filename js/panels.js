@@ -6,7 +6,7 @@ const panelData = {
     },
     uottahack: {
         title: "Community Director @ uOttaHack",
-        text: "Led 25+ events for ottawas largest technology event.",
+        text: "Led 25+ events for Ottawas largest technology event.",
         images: []
     },
     technovation: {
