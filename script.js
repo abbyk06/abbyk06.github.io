@@ -25,22 +25,24 @@
         const toggle = document.getElementById("theme-toggle");
         const icon = toggle.querySelector("img");
 
-        // Swaps cat icon + both bird images (front and back)
         function applyDarkMode(isDark) {
             const birdFront = document.querySelector(".transform-front img");
             const birdBack  = document.querySelector(".transform-back img");
             const kitty = document.querySelector(".peeking-kitty");
+            const nameVideo = document.getElementById("name-video");
 
             if (isDark) {
                 icon.src = `${prefix}index-photos/whitecat.png`;
-                if (birdFront) birdFront.src = `${prefix}index-photos/bird-white.png`;
-                if (birdBack)  birdBack.src  = `${prefix}index-photos/asc-bird-white.png`;
-                if (kitty)     kitty.src     = `${prefix}index-photos/kitty-white.png`;
+                if (birdFront)   birdFront.src   = `${prefix}index-photos/bird-white.png`;
+                if (birdBack)    birdBack.src    = `${prefix}index-photos/asc-bird-white.png`;
+                if (kitty)       kitty.src       = `${prefix}index-photos/kitty-white.png`;
+                if (nameVideo)   nameVideo.src   = `${prefix}index-photos/name-white.mp4`;
             } else {
                 icon.src = `${prefix}index-photos/blackcat.png`;
-                if (birdFront) birdFront.src = `${prefix}index-photos/bird-black.png`;
-                if (birdBack)  birdBack.src  = `${prefix}index-photos/asc-bird-black.png`;
-                if (kitty)     kitty.src     = `${prefix}index-photos/kitty-black.png`;
+                if (birdFront)   birdFront.src   = `${prefix}index-photos/bird-black.png`;
+                if (birdBack)    birdBack.src    = `${prefix}index-photos/asc-bird-black.png`;
+                if (kitty)       kitty.src       = `${prefix}index-photos/kitty-black.png`;
+                if (nameVideo)   nameVideo.src   = `${prefix}index-photos/name-black.mp4`;
             }
             console.log(window.location.pathname);
     console.log(depth);
@@ -118,3 +120,9 @@
             icon.classList.remove("spinning");
         }, 150);
     }
+
+    const video = document.getElementById("name-video");
+    video.addEventListener("ended", () => {
+        video.currentTime = video.duration;
+        video.pause();
+    });
