@@ -1,0 +1,71 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const projects = [
+        {
+            title: "CSI and MAT Course Visualizer",
+            description: "Interactive course visualizer for CSI and MAT courses at uOttawa.",
+            thumb: "project-files/courseViz.png",
+            type: "image",
+            links: [
+                { label: "GitHub", url: "https://github.com/abbyk06/courseViz" },
+                { label: "Link", url: "https://course-viz.vercel.app/" }
+            ]
+        },
+        {
+            title: "MakerRepo Workshop Training Scraper",
+            description: "Script to send workshop training data to a csv.",
+            thumb: "project-files/mrepo.png",
+            type: "image",
+            links: [
+                { label: "GitHub", url: "https://github.com/abbyk06/mSpaceTraining" }
+            ]
+        },
+        {
+            title: "MP4 Editor",
+            description: "Script to add threshold and color invert to MP4 videos with custom black and white options.",
+            thumb: "project-files/mp4converter.png",
+            type: "image",
+            links: [
+                { label: "GitHub", url: "https://github.com/abbyk06/mp4thresholder" }
+            ]
+        },
+        {
+            title: "TouchDesigner #1",
+            description: "First TouchDesigner project! Canada Day fireworks reconstructed and overlaid as a 3D particle system, displaced by brightness. Built using TOP to SOP; converted 2D video texture into 3D point geometry.",
+            thumb: "project-files/touchdesigner1.webm",
+            type: "video",
+            links: []
+        },
+        {
+            title: "Dead Internet",
+            description: "Bot detection analysis on Reddit comment data in a Jupyter Notebook with Python. Built to detect automated content using behavioral and linguistic features.",
+            thumb: "project-files/deadinternet.png",
+            type: "image",
+            links: [
+                { label: "GitHub", url: "https://github.com/abbyk06/DeadInternet" }
+            ]
+        }
+    ];
+
+    const list = document.getElementById("project-list");
+
+    projects.forEach(p => {
+        const thumb = p.type === "video"
+            ? `<video autoplay muted loop><source src="${p.thumb}" type="video/webm"></video>`
+            : `<img src="${p.thumb}" alt="${p.title}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`;
+
+        const links = p.links.map(l =>
+            `<a href="${l.url}" target="_blank">${l.label}</a>`
+        ).join("");
+
+        list.innerHTML += `
+            <div class="project-item">
+                <div class="project-thumb">${thumb}</div>
+                <div class="project-info">
+                    <strong>${p.title}</strong>
+                    <p>${p.description}</p>
+                    <div class="project-links">${links}</div>
+                </div>
+            </div>
+        `;
+    });
+});
