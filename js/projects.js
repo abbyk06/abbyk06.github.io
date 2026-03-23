@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const projects = [
         {
-            title: "CSI and MAT Course Visualizer",
+            title: "uOttawa Course Visualizer",
             description: "Interactive course visualizer for CSI and MAT courses at uOttawa.",
             thumb: "project-files/courseViz.png",
             type: "image",
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             title: "MakerRepo Workshop Training Scraper",
-            description: "Script to send workshop training data to a csv.",
+            description: "Python script to send workshop training data to a csv file.",
             thumb: "project-files/mrepo.png",
             type: "image",
             links: [
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             title: "MP4 Editor",
-            description: "Script to add threshold and color invert to MP4 videos with custom black and white options.",
+            description: "Python script to add threshold and color invert to MP4 videos with custom black and white options.",
             thumb: "project-files/mp4converter.png",
             type: "image",
             links: [
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             links: []
         },
         {
-            title: "Dead Internet",
+            title: "Comment Data Analysis",
             description: "Bot detection analysis on Reddit comment data in a Jupyter Notebook with Python. Built to detect automated content using behavioral and linguistic features.",
             thumb: "project-files/deadinternet.png",
             type: "image",

@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     const projects = [
         {
-            title: "Senior Division Mentor | uOttaHack",
+            title: "Senior Division Mentor | Technovation",
             description: "Leading 2 teams of girls in building a mobile app and developping business plans to solve problems in their community.",
             thumb: "community-files/technovation.png",
             type: "image",
             links: [
-                { label: "Link", url: "https://www.uottahack.ca/" }
+                { label: "Link", url: "https://technovationchallenge.org/" }
             ]
         },
         {
             title: "Community Director | uOttaHack",
-            description: "Led the community team behind Ottawa's largest annual technology event.",
+            description: "Led the community team behind Ottawa's largest annual technology event to deliver over 20 events for 1,000+ people.",
             thumb: "community-files/uottahack.png",
             type: "image",
             links: [
-                { label: "Link", url: "https://technovationchallenge.org/" }
+                { label: "Link", url: "https://www.uottahack.ca/" }
             ]
         },
         {
