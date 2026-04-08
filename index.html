@@ -15,6 +15,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <script src="script.js" defer></script>
     <script src="js/loader.js" defer></script>
+    <script src="js/likes.js" defer></script>
 </head>
 
 <body>
@@ -44,11 +45,17 @@
                 <p><a href="photography.html">𖦹 Photography</a></p>
             </div>
             <p>
-                <a href="mailto:abigail.kim@uottawa.ca">୨ Email</a>
+                ୨
+                <a href="mailto:abigail.kim@uottawa.ca"> Email</a>
                 <span class="sep">|</span>
                 <a href="https://www.linkedin.com/in/abigail-s-kim/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <span class="sep">|</span>
-                <a href="https://github.com/abbyk06" target="_blank" rel="noopener noreferrer">GitHub ୧</a>
+                <a href="https://github.com/abbyk06" target="_blank" rel="noopener noreferrer">GitHub</a> ୧
+
+                <span class="like-section">
+                    <button id="like-btn" onclick="handleLike()">💕</button>
+                    <span id="like-count">0</span>
+                </span>
             </p>
             <br>
             <br>

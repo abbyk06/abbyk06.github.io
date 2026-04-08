@@ -86,7 +86,7 @@ main p,
 main > a:hover,
 main p > a:hover,
 .nav-section a:hover {
-    font-weight: bolder;
+    font-style: italic;
 }
 
 /************************************************/
@@ -519,7 +519,7 @@ body::before {
 }
 
 .nav-section a:hover {
-    font-weight: bolder;
+    font-style: oblique;
 }
 
 .side-panel {
@@ -742,4 +742,63 @@ body.dark-mode #loader {
     nav > a {
         font-size: 0.9rem;
     }
+}
+
+/*tags for projects page*/
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.project-tag {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background-color: #86868649;
+    color: #000000;
+}
+
+/*Like button*/
+.like-section {
+    float: right;
+    padding-right: 10%;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#like-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    padding: 0;
+    line-height: 1;
+    color: inherit;
+}
+
+#like-btn:hover {
+    transform: scale(1.2);
+}
+
+#like-btn.liked {
+    color: #e05a5a;
+}
+
+#like-btn.pop {
+    animation: popHeart 0.3s ease;
+}
+
+@keyframes popHeart {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+#like-count {
+    font-size: 0.9rem;
+    opacity: 0.6;
 }
