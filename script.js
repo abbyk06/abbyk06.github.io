@@ -112,6 +112,44 @@
     }
     animateTrail();
 
+    // COLOR PICKER
+    const colors = [
+        "235,208,5",   // yellow
+        "235,5,204",   // pink
+        "5,155,235"    // blue
+    ];
+
+    let colorIndex = 0;
+
+    function setTrailColor(rgb) {
+        if (!trail) return;
+        trail.style.background = `radial-gradient(
+            circle,
+            rgba(${rgb}, 0.8) 0%,
+            rgba(${rgb}, 0.6) 15%,
+            rgba(${rgb}, 0.4) 30%,
+            rgba(${rgb}, 0.1) 60%,
+            rgba(${rgb}, 0) 80%
+        )`;
+    }
+
+    const paletteBtn = document.getElementById("palette-btn");
+    if (paletteBtn) {
+        paletteBtn.addEventListener("click", () => {
+            colorIndex = (colorIndex + 1) % colors.length;
+            setTrailColor(colors[colorIndex]);
+            localStorage.setItem("cursor-color", colors[colorIndex]);
+        });
+    }
+
+    const saved = localStorage.getItem("cursor-color");
+    if (saved && colors.includes(saved)) {
+        colorIndex = colors.indexOf(saved);
+        setTrailColor(saved);
+    } else {
+        setTrailColor(colors[0]);
+    }
+
     // MUSIC
     function toggleMusic() {
         const music = document.getElementById('bg-music');

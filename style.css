@@ -222,13 +222,6 @@ main p {
 }
 
 /************************************/
-.magic:hover{
-    filter: brightness(1.1) drop-shadow(0 0 5px #eb9010);
-    transform: scale(1.05);
-    transition: filter 1s ease, transform 0.2s ease;
-}
-
-/************************************/
 .profile-pic {
     margin-right: 15px;    /* space between image and text */
     margin-bottom: 10px;   /* space below image when text wraps */
@@ -239,8 +232,9 @@ main p {
 }
 
 .intro-text {
-    text-align: left;      /* text aligned left */
-    padding-left: 0px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 /* Clear floats after the container */
@@ -320,11 +314,27 @@ body.dark-mode .nav-section {
 
     background: radial-gradient(
         circle,
-        rgba(235, 208, 5, 0.8) 0%,
-        rgba(235, 208, 5, 0.4) 30%,
-        rgba(235, 208, 5, 0.1) 60%,
-        rgba(235, 208, 5, 0) 80%
+        rgba(235, 5, 204, 0.8) 0%,
+        rgba(235, 5, 204, 0.6) 15%,
+        rgba(235, 5, 204, 0.4) 30%,
+        rgba(235, 5, 204, 0.1) 60%,
+        rgba(235, 5, 204, 0) 80%
     );
+}
+
+#palette-btn {
+    display: inline;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+#palette-btn:hover {
+    transform: scale(1.2) rotate(-15deg);
 }
 
 /**************************************************/
