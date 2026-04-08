@@ -5,8 +5,10 @@ async function loadLikes() {
     try {
         const res = await fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}`);
         const data = await res.json();
+        console.log("like load response:", data); // check this in devtools
         document.getElementById("like-count").textContent = data.count ?? 0;
-    } catch {
+    } catch (e) {
+        console.error("load failed:", e);
         document.getElementById("like-count").textContent = "0";
     }
 }
