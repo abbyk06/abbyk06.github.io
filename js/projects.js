@@ -11,6 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         {
+            title: "Hotel Database Management",
+            description: "Hotel management system for managing hotels, rooms, employees, customers, and bookings.",
+            thumb: "project-files/mp4converter.png",
+            type: "image",
+            links: [
+                { label: "GitHub", url: "https://github.com/Paiges5678/E-Hotel" }
+            ]
+        },
+        {
             title: "MakerRepo Workshop Training Scraper",
             description: "Python script to send workshop training data to a csv file.",
             thumb: "project-files/mrepo.png",
