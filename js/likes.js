@@ -16,7 +16,7 @@ async function loadLikes() {
         document.getElementById("like-count").textContent = data.count ?? 0;
     } catch (e) {
         console.error("load failed:", e);
-        document.getElementById("like-count").textContent = "0";
+        document.getElementById("like-count").textContent = "?";
     }
 }
 

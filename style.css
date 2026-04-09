@@ -331,6 +331,9 @@ body.dark-mode .nav-section {
     padding: 0;
     vertical-align: middle;
     transition: transform 0.2s ease;
+    float: right;
+    display: inline-flex;
+    align-items: center;
 }
 
 #palette-btn:hover {
@@ -776,7 +779,8 @@ body.dark-mode #loader {
     padding-right: 10%;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    padding-left: 1%
+    /*gap: 6px;*/
 }
 
 #like-btn {

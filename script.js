@@ -97,9 +97,14 @@
     const ease = 0.06;
 
     document.addEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
+    // If it's the first move, snap the trail to the mouse immediately
+    if (trailX === 0 && trailY === 0) {
+        trailX = e.clientX;
+        trailY = e.clientY;
+    }
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
 
     function animateTrail() {
         trailX += (mouseX - trailX) * ease;
