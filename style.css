@@ -334,7 +334,7 @@ body.dark-mode .nav-section {
 }
 
 #palette-btn:hover {
-    transform: scale(1.2) rotate(-15deg);
+    transform: scale(1.2) rotate(-90deg);
 }
 
 /**************************************************/
