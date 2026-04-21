@@ -22,16 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         {
-            title: "MakerRepo Workshop Training Scraper",
-            description: "Python script to send workshop training data to a csv file.",
-            thumb: "project-files/mrepo.png",
-            type: "image",
-            tags:["Python"],
-            links: [
-                { label: "GitHub", url: "https://github.com/abbyk06/mSpaceTraining" }
-            ]
-        },
-        {
             title: "MP4 Editor",
             description: "Python script to add threshold and color invert to MP4 videos with custom black and white options.",
             thumb: "project-files/mp4converter.png",
