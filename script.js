@@ -88,6 +88,15 @@
 
             localStorage.setItem("theme", isDark ? "dark" : "light");
         });
+
+        // email
+        document.getElementById('email-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText('abigail.kim@uottawa.ca').then(() => {
+                this.textContent = 'Copied!';
+                setTimeout(() => this.textContent = 'Email', 2000);
+            });
+        });
     });
 
     // CURSOR TRAIL
@@ -186,3 +195,5 @@
         video.currentTime = video.duration - 0.001;
         video.pause();
     });
+
+    

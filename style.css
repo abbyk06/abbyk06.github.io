@@ -816,3 +816,14 @@ body.dark-mode #loader {
     font-size: 0.9rem;
     opacity: 0.6;
 }
+
+#email-tooltip {
+    display: none;
+    font-size: 0.75rem;
+    background: #333;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
