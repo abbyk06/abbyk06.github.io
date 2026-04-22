@@ -119,11 +119,8 @@
 
     // COLOR PICKER
     const colors = [
-        "235,5,204",   // pink
         "235,208,5",   // yellow
-        "5,155,235",   // blue
-        "132, 19, 238", //purple
-        "6,157,19", //green
+        "235,5,204",   // pink
     ];
 
     let colorIndex = 0;

@@ -166,10 +166,10 @@ main p {
 
 .photo-grid img {
     width: 100%;
-    max-width: 200px;
+    max-width: 100px;
     height: auto;
     border-radius: 15px;
-    transition: transform 0.4s ease, filter 0.4s ease; /* smooth animation */
+    transition: transform 0.4s ease, filter 0.4s ease;
     object-fit: contain;
 }
 
