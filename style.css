@@ -314,7 +314,7 @@ body.dark-mode .nav-section {
 
     background: radial-gradient(
         circle,
-        rgba(235, 5, 204, 0.8) 0%,
+        rgba(213, 50, 191, 0.8) 0%,
         rgba(235, 5, 204, 0.6) 15%,
         rgba(235, 5, 204, 0.4) 30%,
         rgba(235, 5, 204, 0.1) 60%,
@@ -337,7 +337,7 @@ body.dark-mode .nav-section {
 }
 
 #palette-btn:hover {
-    transform: scale(1.2) rotate(-90deg);
+    transform: scale(1.2) rotate(-45deg);
 }
 
 /**************************************************/
