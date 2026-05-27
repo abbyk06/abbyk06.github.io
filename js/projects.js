@@ -21,26 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 { label: "GitHub", url: "https://github.com/Paiges5678/E-Hotel" }
             ]
         },
-        {
-            title: "MP4 Editor",
-            description: "Python script to add threshold and color invert to MP4 videos with custom black and white options.",
-            thumb: "project-files/mp4converter.png",
-            type: "image",
-            tags:["Python"],
-            links: [
-                { label: "GitHub", url: "https://github.com/abbyk06/mp4thresholder" }
-            ]
-        },
-        {
-            title: "Comment Data Analysis",
-            description: "Bot detection analysis on Reddit comment data in a Jupyter Notebook with Python. Built to detect automated content using behavioral and linguistic features.",
-            thumb: "project-files/deadinternet.png",
-            type: "image",
-            tags:["Python"],
-            links: [
-                { label: "GitHub", url: "https://github.com/abbyk06/DeadInternet" }
-            ]
-        }
+
     ];
 
     const list = document.getElementById("project-list");
