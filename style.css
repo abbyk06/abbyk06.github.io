@@ -67,7 +67,6 @@ p {
 }
 
 .profile-card, .nav-card {
-    border: 1px solid #333;
     border-radius: 16px;
     padding: 24px;
     background: #fff;
@@ -189,17 +188,39 @@ p {
 
 .scroll-container {
     flex: 1;
-    border: 1px solid #333;
     border-radius: 16px;
     padding: 40px;
     overflow-y: auto;
     scroll-behavior: smooth;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 5%,       /* Top fade takes up the first 5% */
+        black 80%,      /* Middle content stays fully solid from 5% to 80% */
+        transparent 100% /* Bottom fade takes up the final 20% */
+    );
+    
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 5%,
+        black 80%,
+        transparent 100%
+    );
 }
 
-.content-section {
-    min-height: 75vh;
-    padding-bottom: 40px;
+/* --- Section Header & Year Line --- */
+.content-section h1,
+.content-section h2 {
+    font-size: x-large;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+    color: #333;
+    padding-top:4%;
+    padding-bottom: 2%;
 }
+
 
 .cursor-trail {
     position: fixed;
@@ -295,4 +316,94 @@ p {
     .gallery {
         grid-template-columns: 1fr;
     }
+}
+
+/* --- Project Card Container --- */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* Space between different projects */
+    align-items: center;
+}
+
+.project-item {
+    background: #ffffff;
+    border: 1px solid #e4e4e7;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px; /* Limits size so it looks elegant on wide screens */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Project Image/Video Container --- */
+.project-thumb {
+    width: 100%;
+    height: 320px; /* Adjust this height to match how prominent you want the visual */
+    background-color: #f4f4f5;
+    overflow: hidden;
+}
+
+.project-thumb img, 
+.project-thumb video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Project Details Area --- */
+.project-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.project-info strong {
+    font-size: 1.25rem;
+    color: #18181b;
+    font-weight: 700;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: #52525b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Language / Tech Tags --- */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.tag {
+    background-color: #f4f4f5;
+    color: #3f3f46;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    text-transform: lowercase; /* Optional: standard dev-portfolio style */
+}
+
+/* --- Links Alignment --- */
+.project-links {
+    margin-top: 0.5rem;
+}
+
+.project-links a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
 }
