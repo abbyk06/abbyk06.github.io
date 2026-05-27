@@ -12,6 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         {
+            title: "PowerShell Script Collection",
+            description: "Scripts to moniter CPU & memory usage and machine's network activity.",
+            thumb: "project-files/__.png",
+            type: "image",
+            tags: ["PowerShell"],
+            links: [
+                { label: "GitHub", url: "https://github.com/abbyk06/powershell-scripts" }
+            ]
+        },
+        {
             title: "Hotel Database Management",
             description: "Hotel management system for managing hotels, rooms, employees, customers, and bookings.",
             thumb: "project-files/hotel.png",
@@ -19,6 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
             tags: ["Java", "JSP", "PostgreSQL ", "Apache Tomcat", "Maven"],
             links: [
                 { label: "GitHub", url: "https://github.com/Paiges5678/E-Hotel" }
+            ]
+        },
+        {
+            title: "Custom Font Maker",
+            description: "Turns handwriting or images into a custom font.",
+            thumb: "project-files/cust-font.png",
+            type: "image",
+            tags: ["Javascript", "HTML", "CSS"],
+            links: [
+                { label: "GitHub", url: "https://github.com/abbyk06/custom-font" },
+                { label: "Link", url: "https://custom-font-chi.vercel.app/" }
             ]
         },
 

@@ -51,11 +51,10 @@ p {
 /* 2. DYNAMIC WIDE MASTER CONTAINER Layout */
 .container {
     display: grid;
-    /* 0.5fr sidebar + 3.5fr content window = exact 4-part wireframe split ratio */
-    grid-template-columns: 1fr 3fr; /*ratio left to right*/
+    grid-template-columns: 1fr 3fr;
     gap: 24px;
-    width: 95vw;  /* Takes up almost the full width of the screen */
-    height: 92vh; /* Margins top and bottom */
+    width: 95vw;
+    height: 92vh;
 }
 
 /* 3. LEFT COLUMN: STICKY SIDEBAR */
@@ -310,7 +309,6 @@ p {
 
 #loader.hidden { opacity: 0; visibility: hidden; }
 
-/* 9. RESPONSIVE LAYOUT BREAKPOINTS */
 @media (max-width: 768px) {
     body {
         overflow-y: auto;
@@ -320,7 +318,7 @@ p {
     }
 
     .container {
-        grid-template-columns: 1fr; /* Stacks layout into a vertical scroll */
+        grid-template-columns: 1fr;
         height: auto;
         width: 100%;
         gap: 16px;
@@ -329,7 +327,6 @@ p {
     .scroll-container {
         padding: 16px;
         overflow-y: visible;
-        
         -webkit-mask-image: none;
         mask-image: none;
     }
@@ -338,17 +335,20 @@ p {
         grid-template-columns: 1fr;
     }
 
-    .project-item {
-        flex-direction: column; /* Image stays on top of text */
+    .project-list .project-item {
+        display: flex !important;
+        flex-direction: column !important;
     }
 
-    .project-thumb {
-        width: 100%;       /* Spans full card width */
-        min-width: 0;      /* Clears any desktop minimum rules */
-        height: 120px;     /* Much shorter height */
+    .project-list .project-thumb {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: 120px !important;
     }
 
-    .project-info {
+    .project-list .project-info {
+        width: 100% !important;
         padding: 1.25rem;
     }
 }
@@ -357,7 +357,7 @@ p {
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem; /* Space between different projects */
+    gap: 2.5rem;
     align-items: center;
 }
 
@@ -367,15 +367,15 @@ p {
     border-radius: 12px;
     overflow: hidden;
     display: flex;
-    flex-direction: row; /* Changed from column to row */
+    flex-direction: row;
     width: 100%;
-    max-width: 800px; 
+    max-width: 800px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .project-thumb {
-    width: 30%; /* Allocates 40% of the card width to the image */
-    min-width: 300px; /* Prevents the image from getting too small */
+    width: 30%;
+    min-width: 300px;
     height: 275px;
     background-color: #f4f4f5;
     overflow: hidden;
@@ -424,7 +424,7 @@ p {
     font-weight: 600;
     padding: 0.25rem 0.75rem;
     border-radius: 6px;
-    text-transform: lowercase; /* Optional: standard dev-portfolio style */
+    text-transform: lowercase;
 }
 
 /* --- Links Alignment --- */
