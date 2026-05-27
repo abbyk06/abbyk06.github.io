@@ -6,21 +6,27 @@
     font-style: normal;
 }
 
+/* 1. GLOBAL RESET & BASE STYLES */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: rgb(255, 255, 255);
     font-family: 'Nunito', sans-serif;
-    margin:0;
-    min-height: 100vh;
-    padding-top: 3%;
-    padding-left: 15%;
-    padding-right: 15%;
-    text-align: left;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents global page bounce */
     position: relative;
     transition: background-color 0.1s ease, color 0.1s ease;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
-
-/************************************************/
 h1, h1 > a {
     text-decoration: none;
     color: rgb(0, 0, 0);
@@ -31,600 +37,28 @@ h1, h1 > a {
     margin: 0;
 }
 
-/************************************************/
-
-nav{
-    /*display:flex;*/
-    justify-content: left;
-    align-items:left;
-    gap: 15pc;
-    margin-top: 2px;
-    margin-bottom: 20px;
-}
-
-nav > a{
-    color:#000000;
-    text-decoration: none;
+p {
     text-align: left;
-    font-style: normal;
-    margin-top: 0;
-    margin-bottom: 20px;
+    font-size:large;
 }
 
-nav a:hover {
-    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
-
-}
-/************************************************/
-.intro-text a,
-main > a,
-main p > a,
-main strong,
-main p,
-.nav-section a {
-    color: inherit;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-main > a:hover,
-main p > a:hover,
-.nav-section a:hover {
-    font-style: italic;
-}
-
-/************************************************/
 .lora-regular {
     font-family: "Lora", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-footer {
-    color: rgb(255, 255, 255);
-    font-size: smaller;
-    animation: fadeUp 1s ease-in;
-    padding-top: 0%;
-}
-
-footer p {
-    margin: 0;
-    line-height: 1.1;
-}
-
-footer >a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
-}
-footer a:hover {
-    transform: scale(1.05);
-}
-
-main p {
-    text-align: left;
-}
-/************************************************/
-.name-hover {
-    position: relative;
-    display: inline-block;
-    cursor: default;
-}
-
-/************************************************/
-/* Photo grid layout */
-.photo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
-/* Images in the grid */
-.photo-grid a {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
-
-.photo-grid img {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-    border-radius: 15px;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    object-fit: contain;
-}
-
-@media (max-width: 768px) {
-    .photo-grid img {
-        max-width: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .photo-grid img {
-        max-width: 120px;
-    }
-}
-
-/* Hover effect on images */
-.photo-grid img:hover {
-    transform: scale(1.1) rotate(-2deg) translateY(-12px); /* zoom, slight tilt, and float up */
-}
-
-.makeSmaller{
-    width: 20%;        /* adjust size as needed */
-    height: auto;      /* keeps aspect ratio */
-    display: block;    /* for centering */
-    margin: 0 auto;    /* centers the image in its grid cell */
-}
-
-/************************************************/
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* responsive grid */
-    gap: 30px; /* space between images */
-    padding: 20px 0;
-    width: 120vw;
-    max-width: 1100px;
-    margin: 40px auto;   /* center the grid */
-    position:relative;
-    left:50%;
-    transform:translateX(-50%)
-}
-
-.gallery img {
-    width: 100%;         /* fills the grid cell */
-    height: auto;        /* keeps aspect ratio */
-    transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);  /* slight zoom on hover */
-}
-
-
-
-.intro-text {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-/* Clear floats after the container */
-.intro-container::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-.intro-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 25px;
-}
-
-
-/*********************************************/
-.cursor-trail {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
-
-    background: radial-gradient(
-        circle,
-        rgba(213, 50, 191, 0.8) 0%,
-        rgba(235, 5, 204, 0.6) 15%,
-        rgba(235, 5, 204, 0.4) 30%,
-        rgba(235, 5, 204, 0.1) 60%,
-        rgba(235, 5, 204, 0) 80%
-    );
-}
-
-#palette-btn {
-    display: inline;
-    background: none;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0;
-    vertical-align: middle;
-    transition: transform 0.2s ease;
-    float: right;
-    display: inline-flex;
-    align-items: center;
-}
-
-#palette-btn:hover {
-    transform: scale(1.2) rotate(-45deg);
-}
-
-/**************************************************/
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-.profile-flip {
-    float: left;           /* image on the left */
-    margin-right: 15px;    /* space between image and text */
-    margin-bottom: 10px;   /* space below image when text wraps */
-    width: 250px;          /* image size */
-    height: 250px;
-    perspective: 1000px; /* important for 3D flip */
-    margin-right: 25px; /* space from text */
-    object-fit: cover;
-
-}
-
-.flip-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s ease;
-    transform-style: preserve-3d; /* enables 3D rotation */
-}
-
-.profile-flip:hover .flip-inner {
-    transform: rotateY(180deg); /* flips horizontally */
-}
-
-/* Front side (the image) */
-.flip-front {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* hide back when facing front */
-    overflow: hidden;
-}
-/************************************/
-/*flip for projects*/
-body > .flip-card {
-  display: inline-block; /* cards in a row */
-    margin: 10px;
-    align-items: center;
-}
-
-/* Flip card container */
-.flip-card {
-    background-color: transparent;
-    width: 400px;
-    height: 300px;
-    perspective: 1000px; /* 3D effect */
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;        /* ← centers it */
-    margin-bottom: 20px;   /* ← space between cards */
-}
-/* Flip on hover */
-.flip-card:hover .flip-inner {
-    transform: rotateY(180deg);
-}
-
-/* Front and back sides */
-.flip-front,
-.flip-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    overflow: hidden;
-}
-
-
-/*********************************/
-/* Background image layer */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    /*background: url("icons/background.png") bottom / cover no-repeat;
-    opacity: 0.1;          /* adjust this (0.1 – 0.4 usually looks good) */
-    z-index: -1;            /* keeps it behind everything */
-    filter: blur(1px);
-}
-
-/**************************************************/
-.transform{
-    position:relative;
-}
-.transform-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-.transform-front,
-.transform-back{
-    position:absolute;
-    inset:0;
-}
-
-.transform-front {
-    z-index: 1;
-}
-
-.transform-back{
-    overflow: hidden;
-    z-index:2;
-}
-.transform-back img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    clip-path: inset(0 100% 0 0 );
-    transition: clip-path 0.8s steps(20);
-}
-
-.transform:hover .transform-back img {
-    clip-path: inset(0 0 0 0);
-}
-
-.transform-front img {
-    transition: opacity 0.2s steps(15);
-}
-.transform:hover .transform-front img {
-    opacity: 0;
-}
-
-
-/****************************/
-.nav-section {
-    border-left: 2px solid #000000;
-    margin: 0;
-    padding-left: 16px;
-    margin-top: 4px;
-}
-.nav-section a{
-    text-decoration: none;
-    color: 50, 50, 100;
-}
-
-.nav-section a:hover {
-    font-style: oblique;
-}
-
-.side-panel {
-    position: fixed;
-    top: 15%;
-    left: 23%;
-    width: 350px;
-    max-height: 30vh;
-    background: rgba(206, 192, 220, 0);
-    overflow-y: auto;
-    padding: 24px;
-    z-index: 10001;
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(0.8);
-    transform-origin: left;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-
-
-.side-panel.open {
-    opacity: 1;
-    pointer-events: all;
-    transform: scale(1);
-}
-
-#close-panel {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0;
-    margin-left:auto;
-    display:block;
-}
-
-/* Side panel scrollbar */
-.side-panel::-webkit-scrollbar {
-    width: 4px;
-    border-radius: 10px;
-}
-
-.side-panel::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.side-panel::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.345);
-    border-radius: 10px;
-}
-
-.side-panel::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.59);
-}
-
-
-
-#loader {
-    position: fixed;
-    inset: 0;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-
-
-#loader.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-#content {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-#content.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-@keyframes popIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/*//////////////////////////////////////*/
-@media (max-width: 768px) {
-
-    body {
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-top: 8%;
-    }
-
-    /* 1 column gallery */
-    .gallery {
-        grid-template-columns: 1fr;
-        width: 90vw;
-        left: 0;
-        transform: none;
-        margin: 20px auto;
-    }
-
-    /* photo grid smaller */
-    .photo-grid img {
-        max-width: 130px;
-    }
-
-
-    /* side panel full width */
-    .side-panel {
-        left: 5%;
-        width: 90%;
-        top: 20%;
-    }
-
-    /* nav back button */
-    nav > a {
-        font-size: 0.9rem;
-    }
-}
-
-/*tags for projects page*/
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 8px;
-}
-
-.project-tag {
-    font-size: 0.75rem;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background-color: #86868649;
-    color: #000000;
-}
-
-/*Like button*/
-.like-section {
-    float: right;
-    padding-right: 10%;
-    display: inline-flex;
-    align-items: center;
-    padding-left: 1%
-    /*gap: 6px;*/
-}
-
-#like-btn {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.15s ease;
-    padding: 0;
-    line-height: 1;
-    color: inherit;
-}
-
-#like-btn:hover {
-    transform: scale(1.2);
-}
-
-#like-btn.liked {
-    color: #e05a5a;
-}
-
-#like-btn.pop {
-    animation: popHeart 0.3s ease;
-}
-
-@keyframes popHeart {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(1.4); }
-    100% { transform: scale(1); }
-}
-
-#like-count {
-    font-size: 0.9rem;
-    opacity: 0.6;
-}
-
-#email-tooltip {
-    display: none;
-    font-size: 0.75rem;
-    background: #333;
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 8px;
-    margin-left: 4px;
-    vertical-align: middle;
-}
-
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Nunito', sans-serif;
-    background-color: #ffffff;
-    height: 100vh;
-    display: flex;
-    justify-content: center; /* Centers the 4/5ths width container horizontally */
-    align-items: center;
-    overflow: hidden;
-}
-
-/* MASTER CONTAINER SIZED TO EXACTLY 4/5ths OF THE SCREEN */
+/* 2. DYNAMIC WIDE MASTER CONTAINER Layout */
 .container {
     display: grid;
-    /* 0.5fr + 3.5fr = 4 total proportional framework fraction parts */
-    grid-template-columns: 1fr 4fr;
+    /* 0.5fr sidebar + 3.5fr content window = exact 4-part wireframe split ratio */
+    grid-template-columns: 1fr 3fr; /*ratio left to right*/
     gap: 24px;
-    width: 100vw; /* Take up exactly 4/5ths width of your screen */
-    height: 90vh; /* Leave slight margins top and bottom */
+    width: 95vw;  /* Takes up almost the full width of the screen */
+    height: 92vh; /* Margins top and bottom */
 }
 
-/* SIDEBAR LAYOUT CONFIGURATION */
+/* 3. LEFT COLUMN: STICKY SIDEBAR */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -647,7 +81,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .nav-links {
@@ -656,22 +90,24 @@ body {
     gap: 16px;
 }
 
-/* NAVIGATION SCROLL HIGHLIGHT STATES */
+/* Links inside navigation card */
 .nav-item {
     text-decoration: none;
     color: #a0a0a0;
     font-size: 1.05rem;
     transition: all 0.25s ease-in-out;
     font-weight: 400;
+    font-size: larger;
 }
 
+/* Bolded active states via JavaScript Scroll Tracker */
 .nav-item.active {
     color: #000000;
     font-weight: 700;
     transform: translateX(4px);
 }
 
-/* INTERACTIVE FOOTER WRAPPER ELEMENTS */
+/* 4. FOOTER & INTERACTIVE PANEL COMPONENTS */
 .footer-links-container {
     display: flex;
     flex-direction: column;
@@ -681,7 +117,7 @@ body {
 }
 
 .social-row {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: #444;
 }
 
@@ -723,7 +159,17 @@ body {
     transform: scale(1.15);
 }
 
-/* MAIN CONTENT SUBCONTAINER VIEWPORT */
+#like-btn.liked { color: #e05a5a; }
+#like-btn.pop { animation: popHeart 0.3s ease; }
+#like-count { font-size: 0.9rem; opacity: 0.6; }
+
+@keyframes popHeart {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+/* 5. RIGHT COLUMN: MAIN CONTENT CONTROLLER */
 .content-wrapper {
     display: flex;
     flex-direction: column;
@@ -751,6 +197,102 @@ body {
 }
 
 .content-section {
-    min-height: 75vh; /* Gives content spacious heights for beautiful scrolling actions */
+    min-height: 75vh;
     padding-bottom: 40px;
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+}
+
+/* 7. IMAGE / PROJECT GALLERIES DESIGN rules */
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.photo-grid img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    object-fit: contain;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.1) rotate(-2deg) translateY(-12px);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px 0;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.gallery img:hover { transform: scale(1.05); }
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.project-tag {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background-color: #86868649;
+    color: #000000;
+}
+
+/* 8. LOADER STYLES */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader.hidden { opacity: 0; visibility: hidden; }
+
+/* 9. RESPONSIVE LAYOUT BREAKPOINTS */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Stacks layout into a vertical scroll on mobile phones */
+        height: auto;
+        width: 95vw;
+    }
+    body {
+        overflow-y: auto;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 }
