@@ -178,12 +178,19 @@ p {
 }
 
 .placeholder-header {
-    border: 1px solid #333;
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 5px;
+    padding: 5px;
     text-align: center;
     font-weight: 700;
     letter-spacing: 1px;
+}
+
+.header-banner {
+    width: 100%;
+    height: auto;
+    max-height: 100px; /* Limits the height so it doesn't crowd your work content */
+    object-fit:scale-down;  /* Ensures it crops cleanly if it resizes */
+    border-radius: 8px; /* Optional: rounds the corners to match your project cards */
 }
 
 .scroll-container {
