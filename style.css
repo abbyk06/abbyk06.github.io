@@ -188,7 +188,7 @@ p {
 .header-banner {
     width: 100%;
     height: auto;
-    max-height: 60px; /* Limits the height so it doesn't crowd your work content */
+    max-height: 65px; /* Limits the height so it doesn't crowd your work content */
     object-fit:scale-down;  /* Ensures it crops cleanly if it resizes */
     border-radius: 8px; /* Optional: rounds the corners to match your project cards */
 }
