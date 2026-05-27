@@ -12,25 +12,14 @@ body {
     margin:0;
     min-height: 100vh;
     padding-top: 3%;
-    padding-left: 30%;
-    padding-right: 30%;
+    padding-left: 15%;
+    padding-right: 15%;
     text-align: left;
     position: relative;
     transition: background-color 0.1s ease, color 0.1s ease;
 }
 
-/************************************************/
-/* Fade in and slide up animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 /************************************************/
 h1, h1 > a {
     text-decoration: none;
@@ -40,11 +29,6 @@ h1, h1 > a {
     display: inline-block;
     font-size: 2rem;
     margin: 0;
-}
-
-body.dark-mode h1,
-body.dark-mode h1 > a {
-    color: #ffffff;
 }
 
 /************************************************/
@@ -127,23 +111,6 @@ main p {
     cursor: default;
 }
 
-.peeking-kitty {
-    position: absolute;
-    width: 60px;
-    height: auto;
-    bottom: 85%;
-    left: 15px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.2s ease, transform 0.1s ease;
-    pointer-events: none;
-}
-
-.name-hover:hover .peeking-kitty {
-    opacity: 1;
-    transform: translateY(0px);
-}
-
 /************************************************/
 /* Photo grid layout */
 .photo-grid {
@@ -221,15 +188,7 @@ main p {
     transform: scale(1.05);  /* slight zoom on hover */
 }
 
-/************************************/
-.profile-pic {
-    margin-right: 15px;    /* space between image and text */
-    margin-bottom: 10px;   /* space below image when text wraps */
-    width: 250px;          /* image size */
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
+
 
 .intro-text {
     display: flex;
@@ -250,57 +209,6 @@ main p {
     gap: 25px;
 }
 
-/************************************/
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-body.dark-mode a {
-    color: #ffffff;
-}
-
-body.dark-mode nav > a{
-    color: #ffffff;
-}
-
-body.dark-mode footer {
-    color: #ffffff;
-}
-
-body.dark-mode .nav-section {
-    border-left: 2px solid #ffffff;
-}
-
-#theme-toggle {
-    position: relative;
-    top: 75px;
-    left: 83%;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10000;
-    transition: transform 0.1s ease, text-shadow 0.3s ease;
-}
-
-#theme-toggle:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 10px rgba(235, 208, 5, 0.8);
-}
-
-#theme-toggle img {
-    width:60px;
-    height : 90px;
-    display: block;
-    transition: transform 0.7s ease, opacity 0.2s ease;
-    transform-style: preserve-3d;
-    }
-
-/* Flip class */
-#theme-toggle img.flip {
-    transform: rotateY(180deg);
-    }
 
 /*********************************************/
 .cursor-trail {
@@ -412,33 +320,6 @@ body > .flip-card {
     overflow: hidden;
 }
 
-/* Front: the image */
-.flip-front img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-}
-
-/* Back (content) */
-.flip-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(208, 191, 228);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    backface-visibility: hidden; /* hide front when facing back */
-    transform: rotateY(180deg);
-    padding: 10px;
-    font-size: 14px;
-}
-
-.flip-back div {
-    text-align: center;
-}
 
 /*********************************/
 /* Background image layer */
@@ -494,30 +375,6 @@ body::before {
     opacity: 0;
 }
 
-
-.transform-profile{
-    width: 250px;
-    height:250px;
-    float: left;           /* image on the left */
-    margin-right: 15px;    /* space between image and text */
-    margin-bottom: 10px;   /* space below image when text wraps */
-    object-fit: cover;
-    display: block;
-}
-
-.transform-bird {
-    width: 200px;
-    height: 200px;
-    position: relative;
-    padding: 0;
-    margin-top: -60px;
-    overflow: hidden;
-}
-.transform-bird img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
 
 /****************************/
 .nav-section {
@@ -589,51 +446,7 @@ body::before {
     background-color: rgba(0, 0, 0, 0.59);
 }
 
-body.dark-mode #close-panel {
-    color: #ffffff;
-}
 
-body.dark-mode .side-panel::-webkit-scrollbar-thumb {
-    background-color: rgba(244, 244, 244, 0.345);
-}
-
-body.dark-mode .side-panel::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 255, 255, 0.675);
-}
-
-/*************music************/
-#play-btn {
-    display: block;
-    margin-top: -20px;
-    background: none;
-    border: none;
-    width: 75px;
-    height: 75px;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 80px;
-}
-
-#play-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-#play-btn:hover img {
-    transform: scale(1.05);
-    transition: transform 0.2s ease;
-}
-
-#play-btn img.spinning {
-    transform: rotate(90deg);
-}
-
-body.dark-mode #play-btn {
-    opacity: 0.85;
-}
-/*//////////////////////////////////////*/
 
 #loader {
     position: fixed;
@@ -646,10 +459,7 @@ body.dark-mode #play-btn {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* dark mode loader bg */
-body.dark-mode #loader {
-    background: #121212;
-}
+
 
 #loader.hidden {
     opacity: 0;
@@ -667,26 +477,6 @@ body.dark-mode #loader {
     transform: translateY(0);
 }
 
-.loader-animals {
-    display: flex;
-    gap: -20px;
-    align-items: flex-end;
-}
-
-.loader-animal {
-    width: 200px;
-    opacity: 0;
-    animation: popIn 0.4s ease forwards;
-    margin-left: -50px; /* negative = overlap, adjust to taste */
-}
-
-.loader-animal:first-child {
-    margin-left: 0; /* don't offset the first one */
-}
-
-.loader-animal:nth-child(3) { animation-delay: 0s; }
-.loader-animal:nth-child(2) { animation-delay: 0.2s; }
-.loader-animal:nth-child(1) { animation-delay: 0.4s; }
 
 @keyframes popIn {
     from {
@@ -722,27 +512,6 @@ body.dark-mode #loader {
         max-width: 130px;
     }
 
-    /* cat toggle reposition */
-    #theme-toggle {
-        top: 10px;
-        left: auto;
-        right: 5%;
-        position: fixed;
-    }
-
-    /* bird + music row */
-    .transform-bird {
-        width: 120px;
-        height: 120px;
-        margin-top: 0;
-    }
-
-    #play-btn {
-        width: 50px;
-        height: 50px;
-        margin-left: 20px;
-        margin-top: 0;
-    }
 
     /* side panel full width */
     .side-panel {
@@ -826,4 +595,162 @@ body.dark-mode #loader {
     border-radius: 8px;
     margin-left: 4px;
     vertical-align: middle;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centers the 4/5ths width container horizontally */
+    align-items: center;
+    overflow: hidden;
+}
+
+/* MASTER CONTAINER SIZED TO EXACTLY 4/5ths OF THE SCREEN */
+.container {
+    display: grid;
+    /* 0.5fr + 3.5fr = 4 total proportional framework fraction parts */
+    grid-template-columns: 1fr 4fr;
+    gap: 24px;
+    width: 100vw; /* Take up exactly 4/5ths width of your screen */
+    height: 90vh; /* Leave slight margins top and bottom */
+}
+
+/* SIDEBAR LAYOUT CONFIGURATION */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.profile-card, .nav-card {
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 24px;
+    background: #fff;
+}
+
+.profile-card {
+    flex: 0 0 auto;
+}
+
+.nav-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* NAVIGATION SCROLL HIGHLIGHT STATES */
+.nav-item {
+    text-decoration: none;
+    color: #a0a0a0;
+    font-size: 1.05rem;
+    transition: all 0.25s ease-in-out;
+    font-weight: 400;
+}
+
+.nav-item.active {
+    color: #000000;
+    font-weight: 700;
+    transform: translateX(4px);
+}
+
+/* INTERACTIVE FOOTER WRAPPER ELEMENTS */
+.footer-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+}
+
+.social-row {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.social-row a {
+    color: #000;
+    text-decoration: none;
+}
+
+.social-row .sep {
+    color: #ccc;
+    margin: 0 4px;
+}
+
+.interactive-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.like-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#like-btn, #palette-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: transform 0.2s;
+}
+
+#like-btn:hover, #palette-btn:hover {
+    transform: scale(1.15);
+}
+
+/* MAIN CONTENT SUBCONTAINER VIEWPORT */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.placeholder-header {
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.scroll-container {
+    flex: 1;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 40px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.content-section {
+    min-height: 75vh; /* Gives content spacious heights for beautiful scrolling actions */
+    padding-bottom: 40px;
 }
