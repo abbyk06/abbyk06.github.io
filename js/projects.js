@@ -32,14 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         {
-            title: "TouchDesigner #1",
-            description: "Canada Day fireworks reconstructed and overlaid as a 3D particle system, displaced by brightness. Built using TOP to SOP; converted 2D video texture into 3D point geometry.",
-            thumb: "project-files/touchdesigner1.webm",
-            type: "video",
-            tags:["Touch Designer"],
-            links: []
-        },
-        {
             title: "Comment Data Analysis",
             description: "Bot detection analysis on Reddit comment data in a Jupyter Notebook with Python. Built to detect automated content using behavioral and linguistic features.",
             thumb: "project-files/deadinternet.png",
