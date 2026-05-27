@@ -171,7 +171,6 @@ p {
 .content-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     height: 100%;
     overflow: hidden;
 }
@@ -198,19 +197,22 @@ p {
     padding: 40px;
     overflow-y: auto;
     scroll-behavior: smooth;
+
+    /* --- WEBKIT MASK (Safari/Chrome older syntax alignment) --- */
     -webkit-mask-image: linear-gradient(
         to bottom,
         transparent 0%,
-        black 5%,       /* Top fade takes up the first 5% */
-        black 80%,      /* Middle content stays fully solid from 5% to 80% */
-        transparent 100% /* Bottom fade takes up the final 20% */
+        black 15px,       /* Sharp fade-in over just 15 pixels at the top */
+        black calc(100% - 25px), /* Keeps content 100% solid until 25px from the bottom */
+        transparent 100%   /* Sharp fade-out at the very edge */
     );
     
+    /* --- STANDARD MASK --- */
     mask-image: linear-gradient(
         to bottom,
         transparent 0%,
-        black 5%,
-        black 80%,
+        black 15px,       /* Uses absolute pixel metrics for a consistent, crisp boundary */
+        black calc(100% - 25px), 
         transparent 100%
     );
 }
