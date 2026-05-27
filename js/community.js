@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
     ];
 
-    const list = document.getElementById("project-list");
+    const list = document.getElementById("community-list");
 
     projects.forEach(p => {
         const thumb = p.type === "video"
