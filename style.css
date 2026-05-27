@@ -339,21 +339,21 @@ p {
     border-radius: 12px;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Changed from column to row */
     width: 100%;
-    max-width: 800px; /* Limits size so it looks elegant on wide screens */
+    max-width: 800px; 
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Project Image/Video Container --- */
 .project-thumb {
-    width: 100%;
-    height: 320px; /* Adjust this height to match how prominent you want the visual */
+    width: 30%; /* Allocates 40% of the card width to the image */
+    min-width: 300px; /* Prevents the image from getting too small */
+    height: 275px;
     background-color: #f4f4f5;
     overflow: hidden;
 }
 
-.project-thumb img, 
+.project-thumb img,
 .project-thumb video {
     width: 100%;
     height: 100%;
