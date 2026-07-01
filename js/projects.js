@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             type: "image",
             tags: ["HTML", "CSS"],
             links: [
-                { label: "GitHub", url: "https://github.com/abbyk06/courseViz" },
+                { label: "GitHub  ", url: "https://github.com/abbyk06/courseViz" },
                 { label: "Link", url: "https://course-viz.vercel.app/" }
             ]
         },
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             type: "image",
             tags: ["Javascript", "HTML", "CSS"],
             links: [
-                { label: "GitHub", url: "https://github.com/abbyk06/custom-font" },
+                { label: "GitHub  ", url: "https://github.com/abbyk06/custom-font" },
                 { label: "Link", url: "https://custom-font-chi.vercel.app/" }
             ]
         },

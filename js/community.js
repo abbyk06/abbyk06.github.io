@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const projects = [
         {
-            title: "Senior Division Mentor | Technovation",
+            title: "Senior Division Mentor @ Technovation",
             description: "Leading 2 teams of girls in building a mobile app and developping business plans to solve problems in their community.",
             thumb: "community-files/technovation.png",
             type: "image",
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         {
-            title: "Community Director | uOttaHack",
+            title: "Community Director @ uOttaHack",
             description: "Led the community team behind Ottawa's largest annual technology event to deliver over 20 events for 1,000+ people.",
             thumb: "community-files/uottahack.png",
             type: "image",
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         {
-            title: "Go Code Girl Instructor | Faculty of Engineering",
+            title: "Go Code Girl Instructor @ Faculty of Engineering",
             description: "Teaching coding & tech workshops to girls!",
             thumb: "community-files/outreach.png",
             type: "image",
@@ -27,16 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 { label: "Link", url: "https://www.uottawa.ca/faculty-engineering/events-all/go-code-girl" }
             ]
         },
-        {
-            title: "Student Ambassador | Faculty of Engineering",
-            description: "On a billboard and the 2026 Engineering Program Guide.",
-            thumb: "community-files/progGuide.png",
-            type: "image",
-            links: [
-                { label: "Link", url: "https://www.scribd.com/document/928063529/uOttawaEngineeringProgramGuide2026-EN-web" }
-            ]
-        },
-        
     ];
 
     const list = document.getElementById("community-list");

@@ -2,8 +2,8 @@ window.PortfolioData = window.PortfolioData || {};
 
 window.PortfolioData.work = [
         {
-        title: "IT Analyst | Royal College of Physicians and Surgeons of Canada",
-        description: "",
+        title: "IT Analyst @ the Royal College of Physicians and Surgeons of Canada",
+        description: "Managing IT systems and provisioning end-user support across a 500+ person org. Handling technical asset mapping, and deploying endpoints secured via Microsoft Intune, Entra ID, and TPM encryption.",
         thumb: "work-files/RC.jpg",
         type: "image",
         links: [
@@ -11,7 +11,7 @@ window.PortfolioData.work = [
         ]
     },
     {
-        title: "Workshop Coordinator & Instructor | Center for Entrepreneurship and Engineering Design",
+        title: "Workshop Coordinator & Instructor @ the Center for Entrepreneurship and Engineering Design",
         description: "Managing and instructing 80+ workshops for 1,200+ participants on the digital technologies offered in our MakerSpace.",
         thumb: "work-files/mspace.png",
         type: "image",

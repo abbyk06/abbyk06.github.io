@@ -21,39 +21,59 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // --- NEW: INTERSECTION OBSERVER FOR SCROLL HIGHLIGHTING ---
+    // --- SCROLL HIGHLIGHTING: bolds the nav-item for the section in view ---
+    // Now tracks the whole viewport (page scrolls normally) instead of an
+    // inner .scroll-container, since the hero pushes content into normal flow.
     const sections = document.querySelectorAll(".content-section");
     const navItems = document.querySelectorAll(".nav-item");
-    const scrollContainer = document.querySelector(".scroll-container");
 
-    if (sections.length && navItems.length && scrollContainer) {
-        const options = {
-            root: scrollContainer, // Watches the scrolling inside your content block
-            rootMargin: "-20% 0px -60% 0px", // Triggers when section passes the top area
+    if (sections.length && navItems.length) {
+        const sectionOptions = {
+            root: null,
+            rootMargin: "-100px 0px -60% 0px", // accounts for the sticky header height
             threshold: 0
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    // Remove active/bold styling from all navigation links
                     navItems.forEach((item) => item.classList.remove("active"));
-                    
-                    // Match the ID of the section in view with the nav link href
+
                     const id = entry.target.getAttribute("id");
-                    const activeLink = document.querySelector(`.nav-item[href="#${id}"]`);
-                    
-                    if (activeLink) {
-                        activeLink.classList.add("active");
-                    }
+                    document
+                        .querySelectorAll(`.nav-item[href="#${id}"]`)
+                        .forEach((link) => link.classList.add("active"));
                 }
             });
-        }, options);
+        }, sectionOptions);
 
-        // Tell the observer to watch every content section
-        sections.forEach((section) => observer.observe(section));
+        sections.forEach((section) => sectionObserver.observe(section));
     }
     // --- END OF SCROLL HIGHLIGHTING LOGIC ---
+
+
+    // --- HERO → STICKY NAV TRANSITION ---
+    // Reveals the sticky header once the hero has scrolled (mostly) out of view.
+    const hero = document.getElementById("hero");
+    const stickyNav = document.getElementById("sticky-nav");
+
+    if (hero && stickyNav) {
+        const heroObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    stickyNav.classList.toggle("visible", !entry.isIntersecting);
+                });
+            },
+            {
+                root: null,
+                threshold: 0,
+                rootMargin: "-80% 0px 0px 0px" // flips once ~80% of the hero has scrolled by
+            }
+        );
+
+        heroObserver.observe(hero);
+    }
+    // --- END OF HERO / STICKY NAV LOGIC ---
 });
 
 // CURSOR TRAIL

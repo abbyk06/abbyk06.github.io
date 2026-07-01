@@ -13,18 +13,16 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: rgb(255, 255, 255);
     font-family: 'Nunito', sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Prevents global page bounce */
+    min-height: 100vh;
     position: relative;
     transition: background-color 0.1s ease, color 0.1s ease;
-    padding-left: 15%;
-    padding-right: 15%;
 }
 
 h1, h1 > a {
@@ -39,7 +37,7 @@ h1, h1 > a {
 
 p {
     text-align: left;
-    font-size:large;
+    font-size: large;
 }
 
 .lora-regular {
@@ -48,74 +46,112 @@ p {
     font-style: normal;
 }
 
-/* 2. DYNAMIC WIDE MASTER CONTAINER Layout */
-.container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 24px;
-    width: 95vw;
-    height: 92vh;
+/* 2. HERO — fullscreen centered intro on load, no sidebar chrome */
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15%;
 }
 
-/* 3. LEFT COLUMN: STICKY SIDEBAR */
-.sidebar {
+.hero-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    height: 100%;
+    align-items: center;
+    gap: 12px;
 }
 
-.profile-card, .nav-card {
-    border-radius: 16px;
-    padding: 24px;
-    background: #fff;
+.hero-greeting span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 2.6rem;
+    font-weight: 400;
 }
 
-.profile-card {
-    flex: 0 0 auto;
+.hero-name-video {
+    height: 2em;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.nav-card {
-    flex: 1;
+.hero-subtitle {
+    color: #666;
+    font-size: 1.15rem;
+}
+
+.hero-scroll-cue {
+    margin-top: 32px;
+    color: #999;
+    text-decoration: none;
+    font-size: 1.4rem;
+    animation: bounceCue 2s ease-in-out infinite;
+}
+
+@keyframes bounceCue {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(8px); opacity: 1; }
+}
+
+/* 3. STICKY NAV — hidden until the hero is scrolled past */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 5%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.sticky-nav.visible {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .nav-links {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: row;
+    gap: 24px;
 }
 
-/* Links inside navigation card */
+/* Links inside navigation */
 .nav-item {
     text-decoration: none;
     color: #a0a0a0;
-    font-size: 1.05rem;
     transition: all 0.25s ease-in-out;
     font-weight: 400;
-    font-size: larger;
+    font-size: 1rem;
 }
 
 /* Bolded active states via JavaScript Scroll Tracker */
 .nav-item.active {
     color: #000000;
     font-weight: 700;
-    transform: translateX(4px);
 }
 
-/* 4. FOOTER & INTERACTIVE PANEL COMPONENTS */
-.footer-links-container {
+/* 4. HEADER SOCIAL / INTERACTIVE ACTIONS (horizontal, inside sticky nav) */
+.header-actions {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
-    border-top: 1px solid #eee;
-    padding-top: 16px;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
 }
 
 .social-row {
-    font-size: 1.0rem;
+    font-size: 0.95rem;
     color: #444;
 }
 
@@ -132,7 +168,7 @@ p {
 .interactive-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 12px;
 }
 
 .like-section {
@@ -167,12 +203,14 @@ p {
     100% { transform: scale(1); }
 }
 
-/* 5. RIGHT COLUMN: MAIN CONTENT CONTROLLER */
+/* 5. MAIN CONTENT */
 .content-wrapper {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    overflow: hidden;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5% 80px;
 }
 
 .placeholder-header {
@@ -186,35 +224,18 @@ p {
 .header-banner {
     width: 100%;
     height: auto;
-    max-height: 65px; /* Limits the height so it doesn't crowd your work content */
-    object-fit:scale-down;  /* Ensures it crops cleanly if it resizes */
-    border-radius: 8px; /* Optional: rounds the corners to match your project cards */
+    max-height: 65px;
+    object-fit: scale-down;
+    border-radius: 8px;
 }
 
-.scroll-container {
-    flex: 1;
-    border-radius: 16px;
-    padding: 40px;
-    overflow-y: auto;
-    scroll-behavior: smooth;
+.page-content {
+    width: 100%;
+}
 
-    /* --- WEBKIT MASK (Safari/Chrome older syntax alignment) --- */
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        transparent 0%,
-        black 15px,       /* Sharp fade-in over just 15 pixels at the top */
-        black calc(100% - 25px), /* Keeps content 100% solid until 25px from the bottom */
-        transparent 100%   /* Sharp fade-out at the very edge */
-    );
-    
-    /* --- STANDARD MASK --- */
-    mask-image: linear-gradient(
-        to bottom,
-        transparent 0%,
-        black 15px,       /* Uses absolute pixel metrics for a consistent, crisp boundary */
-        black calc(100% - 25px), 
-        transparent 100%
-    );
+/* Offsets the anchor-scroll target so content isn't hidden under the sticky nav */
+.content-section {
+    scroll-margin-top: 90px;
 }
 
 /* --- Section Header & Year Line --- */
@@ -225,10 +246,9 @@ p {
     letter-spacing: 0.05em;
     margin-bottom: 2px;
     color: #333;
-    padding-top:4%;
+    padding-top: 4%;
     padding-bottom: 2%;
 }
-
 
 .cursor-trail {
     position: fixed;
@@ -240,7 +260,7 @@ p {
     z-index: 9999;
 }
 
-/* 7. IMAGE / PROJECT GALLERIES DESIGN rules */
+/* 6. IMAGE / PROJECT GALLERIES DESIGN rules */
 .photo-grid {
     display: flex;
     flex-wrap: wrap;
@@ -282,22 +302,7 @@ p {
 
 .gallery img:hover { transform: scale(1.05); }
 
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 8px;
-}
-
-.project-tag {
-    font-size: 0.75rem;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background-color: #86868649;
-    color: #000000;
-}
-
-/* 8. LOADER STYLES */
+/* 7. LOADER STYLES */
 #loader {
     position: fixed;
     inset: 0;
@@ -311,56 +316,11 @@ p {
 
 #loader.hidden { opacity: 0; visibility: hidden; }
 
-@media (max-width: 768px) {
-    body {
-        overflow-y: auto;
-        padding-left: 16px;
-        padding-right: 16px;
-        height: auto;
-    }
-
-    .container {
-        grid-template-columns: 1fr;
-        height: auto;
-        width: 100%;
-        gap: 16px;
-    }
-
-    .scroll-container {
-        padding: 16px;
-        overflow-y: visible;
-        -webkit-mask-image: none;
-        mask-image: none;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .project-list .project-item {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-
-    .project-list .project-thumb {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        height: 120px !important;
-    }
-
-    .project-list .project-info {
-        width: 100% !important;
-        padding: 1.25rem;
-    }
-}
-
-/* --- Project Card Container --- */
+/* 8. PROJECT LIST — 2-column grid on desktop, 1-column on mobile */
 .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
 
 .project-item {
@@ -369,16 +329,14 @@ p {
     border-radius: 12px;
     overflow: hidden;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    max-width: 800px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .project-thumb {
-    width: 30%;
-    min-width: 300px;
-    height: 275px;
+    width: 100%;
+    height: 200px;
     background-color: #f4f4f5;
     overflow: hidden;
 }
@@ -419,6 +377,7 @@ p {
     margin-top: 0.25rem;
 }
 
+.project-tag,
 .tag {
     background-color: #f4f4f5;
     color: #3f3f46;
@@ -443,4 +402,55 @@ p {
 
 .project-links a:hover {
     text-decoration: underline;
+}
+
+/* 9. RESPONSIVE — collapse to 1 column, stack header actions */
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 8%;
+    }
+
+    .hero-greeting span {
+        font-size: 1.9rem;
+    }
+
+    .sticky-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 6%;
+    }
+
+    .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .interactive-row {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .content-wrapper {
+        padding: 0 6% 60px;
+    }
+
+    .content-section {
+        scroll-margin-top: 160px;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 }
