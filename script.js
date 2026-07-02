@@ -140,17 +140,45 @@ if (saved && colors.includes(saved)) {
     setTrailColor(colors[0]);
 }
 
-
 const video = document.getElementById("name-video");
 
-if (video) {
-    setTimeout(() => {
-        video.play().catch(err => console.log("Video play auto-block safety caught:", err));
-    }, 1000);
+const forwardSrc = "index-photos/name-black.mp4";
+const reverseSrc = "index-photos/name-reverse.mp4";
 
-    video.addEventListener("loadedmetadata", () => {
-        if (video.currentTime === 0 && !video.played.length) return;
-        video.currentTime = video.duration - 0.001;
-        video.pause();
+let duration = 0;
+let isReversed = false;
+
+video.addEventListener("loadedmetadata", () => {
+    duration = video.duration;
+});
+
+video.addEventListener("mouseenter", () => {
+    if (isReversed) return;
+
+    const currentPos = video.currentTime;
+    isReversed = true;
+
+    video.src = reverseSrc;
+
+    video.addEventListener("loadedmetadata", function sync() {
+        video.currentTime = Math.max(0, duration - currentPos);
+        video.play();
+        video.removeEventListener("loadedmetadata", sync);
     });
-}
+});
+
+video.addEventListener("mouseleave", () => {
+    if (!isReversed) return;
+
+    const currentPos = video.currentTime;
+    isReversed = false;
+
+    video.src = forwardSrc;
+
+    video.addEventListener("loadedmetadata", function sync() {
+        video.currentTime = Math.max(0, duration - currentPos);
+        video.playbackRate = 1.25;
+        video.play();
+        video.removeEventListener("loadedmetadata", sync);
+    });
+});
