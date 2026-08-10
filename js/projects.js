@@ -1,21 +1,26 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const projects = [
         {
+            title : "Ticket Triage System",
+            description : "Ruby on Rails web app for searching ticket keywords and identifying the appropriate person to assign the tickets to, containerized with Docker.",
+            tags: ["Ruby on Rails", "Docker", "HTML", "CSS"],
+            links:[
+                {label: "Github", url : "https://github.com/abbyk06/servicedesk_triage"}
+            ]
+        },
+        {
             title: "uOttawa Course Visualizer",
             description: "Interactive course visualizer for CSI and MAT courses at uOttawa.",
-            thumb: "project-files/courseViz.png",
-            type: "image",
             tags: ["HTML", "CSS"],
             links: [
-                { label: "GitHub  ", url: "https://github.com/abbyk06/courseViz" },
+                { label: "GitHub", url: "https://github.com/abbyk06/courseViz" },
                 { label: "Link", url: "https://course-viz.vercel.app/" }
             ]
         },
         {
             title: "PowerShell Script Collection",
-            description: "Scripts to moniter CPU & memory usage and machine's network activity.",
-            thumb: "project-files/__.png",
-            type: "image",
+            description: "Scripts to monitor CPU & memory usage and machine's network activity.",
             tags: ["PowerShell"],
             links: [
                 { label: "GitHub", url: "https://github.com/abbyk06/powershell-scripts" }
@@ -24,9 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Hotel Database Management",
             description: "Hotel management system for managing hotels, rooms, employees, customers, and bookings.",
-            thumb: "project-files/hotel.png",
-            type: "image",
-            tags: ["Java", "JSP", "PostgreSQL ", "Apache Tomcat", "Maven"],
+            tags: ["Java", "JSP", "PostgreSQL", "Apache Tomcat", "Maven"],
             links: [
                 { label: "GitHub", url: "https://github.com/Paiges5678/E-Hotel" }
             ]
@@ -34,42 +37,45 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Custom Font Maker",
             description: "Turns handwriting or images into a custom font.",
-            thumb: "project-files/cust-font.png",
-            type: "image",
-            tags: ["Javascript", "HTML", "CSS"],
+            tags: ["JavaScript", "HTML", "CSS"],
             links: [
-                { label: "GitHub  ", url: "https://github.com/abbyk06/custom-font" },
+                { label: "GitHub", url: "https://github.com/abbyk06/custom-font" },
                 { label: "Link", url: "https://custom-font-chi.vercel.app/" }
             ]
-        },
-
+        }
     ];
 
     const list = document.getElementById("project-list");
 
+    if (!list) return;
+
     projects.forEach(p => {
-        const thumb = p.type === "video"
-            ? `<video autoplay muted loop><source src="${p.thumb}" type="video/webm"></video>`
-            : `<img src="${p.thumb}" alt="${p.title}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`;
+        const tags = (p.tags ?? [])
+            .map(tag => `<span class="project-tag">${tag}</span>`)
+            .join(" ");
 
-        const tags = (p.tags ?? []).map(t =>
-            `<span class="project-tag">${t}</span>`
-        ).join("");
+        const links = (p.links ?? [])
+            .map(link =>
+                `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label}</a>`
+            )
+            .join(" · ");
 
-        const links = p.links.map(l =>
-            `<a href="${l.url}" target="_blank">${l.label}</a>`
-        ).join("");
+        list.insertAdjacentHTML("beforeend", `
+            <div class="list-item">
+                <h3>${p.title}</h3>
+                <p>${p.description}</p>
 
-        list.innerHTML += `
-            <div class="project-item">
-                <div class="project-thumb">${thumb}</div>
-                <div class="project-info">
-                    <strong>${p.title}</strong>
-                    <p>${p.description}</p>
-                    <div class="project-tags">${tags}</div>
-                    <div class="project-links">${links}</div>
-                </div>
+                ${tags
+                    ? `<div class="project-tags">${tags}</div>`
+                    : ""
+                }
+
+                ${links
+                    ? `<div class="project-links">${links}</div>`
+                    : ""
+                }
             </div>
-        `;
+        `);
     });
 });
+
