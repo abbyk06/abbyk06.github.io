@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         {
-            title: "Hotel Database Management",
+            title: "Hotel Database Management System",
             description: "Hotel management system for managing hotels, rooms, employees, customers, and bookings.",
             tags: ["Java", "JSP", "PostgreSQL", "Apache Tomcat", "Maven"],
             links: [
@@ -35,12 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         {
-            title: "Custom Font Maker",
-            description: "Turns handwriting or images into a custom font.",
-            tags: ["JavaScript", "HTML", "CSS"],
+            title: "Reddit Comment Data Analysis",
+            description: "Machine learning model to distinguish comments coming from automated (bot) accounts.",
+            tags: ["Python"],
             links: [
-                { label: "GitHub", url: "https://github.com/abbyk06/custom-font" },
-                { label: "Link", url: "https://custom-font-chi.vercel.app/" }
+                { label: "GitHub", url: "https://github.com/abbyk06/DeadInternet/tree/main" },
             ]
         }
     ];

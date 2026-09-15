@@ -1,6 +1,15 @@
 window.PortfolioData = window.PortfolioData || {};
 
 window.PortfolioData.work = [
+    {
+        title: "Full-Stack Developer @ the Center for Entrepreneurship and Engineering Design",
+        description: "Designing and implementing features for both user-facing pages and internal tools using Ruby on Rails, JavaScript, and PostgreSQL.",
+        thumb: "work-files/mspace.png",
+        type: "image",
+        links: [
+            { label: "Link", url: "https://www.uottawa.ca/faculty-engineering/centre-entrepreneurship-engineering-design/facilities/richard-labbe-makerspace" }
+        ]
+    },
         {
         title: "Information Technology Analyst @ the Royal College of Physicians and Surgeons of Canada",
         description: "Managing IT systems and provisioning end-user support across a 500+ person org. Handling technical asset mapping, and deploying endpoints secured via Microsoft Intune, Entra ID, and TPM encryption.",
