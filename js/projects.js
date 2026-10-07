@@ -10,15 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
         {
-            title: "uOttawa Course Visualizer",
-            description: "Interactive course visualizer for CSI and MAT courses at uOttawa.",
-            tags: ["HTML", "CSS"],
-            links: [
-                { label: "GitHub", url: "https://github.com/abbyk06/courseViz" },
-                { label: "Link", url: "https://course-viz.vercel.app/" }
-            ]
-        },
-        {
             title: "PowerShell Script Collection",
             description: "Scripts to monitor CPU & memory usage and machine's network activity.",
             tags: ["PowerShell"],

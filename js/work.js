@@ -2,7 +2,7 @@ window.PortfolioData = window.PortfolioData || {};
 
 window.PortfolioData.work = [
     {
-        title: "Full-Stack Developer @ the Center for Entrepreneurship and Engineering Design",
+        title: "Full-Stack Developer @ CEED",
         description: "Designing and implementing features for both user-facing pages and internal tools using Ruby on Rails, JavaScript, and PostgreSQL.",
         thumb: "work-files/mspace.png",
         type: "image",
@@ -11,8 +11,8 @@ window.PortfolioData.work = [
         ]
     },
         {
-        title: "Information Technology Analyst @ the Royal College of Physicians and Surgeons of Canada",
-        description: "Managing IT systems and provisioning end-user support across a 500+ person org. Handling technical asset mapping, and deploying endpoints secured via Microsoft Intune, Entra ID, and TPM encryption.",
+        title: "IT Analyst @ the Royal College of Physicians and Surgeons of Canada",
+        description: "Managing IT systems and provisioning end-user support across a 500+ person org. Handling technical asset mapping and deploying endpoints secured via Microsoft Intune, Entra ID, and TPM encryption.",
         thumb: "work-files/RC.jpg",
         type: "image",
         links: [
@@ -20,7 +20,7 @@ window.PortfolioData.work = [
         ]
     },
     {
-        title: "Workshop Coordinator @ the Center for Entrepreneurship and Engineering Design",
+        title: "Workshop Coordinator @ CEED",
         description: "Directing 80+ workshops for 1,200+ participants on the digital technologies offered in our MakerSpace.",
         thumb: "work-files/mspace.png",
         type: "image",

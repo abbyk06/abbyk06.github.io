@@ -2,8 +2,18 @@
 document.addEventListener("DOMContentLoaded", () => {
     const community = [
         {
+            title: "VP Events @ Cybersecurity Club",
+            description: "Planned cybersecurity events & workshops.",
+            links: [
+                {
+                    label: "Link",
+                    url: "https://uocybersec.com/"
+                }
+            ]
+        },
+        {
             title: "Senior Division Mentor @ Technovation",
-            description: "Led 2 teams of highschool girls in building a mobile app and developing business plans to solve problems in their community.",
+            description: "Mentored 2 teams of highschool girls in building a mobile app.",
             links: [
                 {
                     label: "Link",
@@ -13,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             title: "Community Director @ uOttaHack",
-            description: "Led the community team behind Ottawa's largest annual technology event to deliver over 20 events for 1,000+ people.",
+            description: "Led the community team behind Ottawa's largest techn event to deliver 20+ events for 1,000+ people.",
             links: [
                 {
                     label: "Link",
@@ -23,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             title: "Go Code Girl Instructor @ Faculty of Engineering",
-            description: "Taught coding & tech workshops for girls!",
+            description: "Taught coding & tech workshops for girls.",
             links: [
                 {
                     label: "Link",

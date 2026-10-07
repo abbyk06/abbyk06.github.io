@@ -48,13 +48,11 @@ p {
 
 /* 2. HERO — fullscreen centered intro on load, no sidebar chrome */
 .hero {
-    height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 15%;
 }
 
 .hero-content {
@@ -85,14 +83,6 @@ p {
     font-size: 1.15rem;
 }
 
-.hero-scroll-cue {
-    margin-top: 32px;
-    color: #999;
-    text-decoration: none;
-    font-size: 1.4rem;
-    animation: bounceCue 2s ease-in-out infinite;
-}
-
 @keyframes bounceCue {
     0%, 100% { transform: translateY(0); opacity: 0.6; }
     50% { transform: translateY(8px); opacity: 1; }
@@ -110,23 +100,17 @@ p {
     justify-content: center;
     padding: 14px 5%;
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid #eee;
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-}
-
-.sticky-nav.visible {
-    transform: translateY(0);
-    opacity: 1;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-top: 1.5px solid #7a2348;
+    border-bottom: 1.5px solid #7a2348;
 }
 
 .nav-links {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    align-items: center;
+    gap: 50px;
 }
 
 /* Links inside navigation */
@@ -212,15 +196,15 @@ p {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 5% 80px;
 }
 
 .placeholder-header {
     border-radius: 5px;
-    padding: 5px;
     text-align: center;
     font-weight: 700;
     letter-spacing: 1px;
+    padding-top: 70px;
+    
 }
 
 .header-banner {
@@ -234,7 +218,7 @@ p {
 .page-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 70px 40px 100px;
+    padding: 0x 40px 100px;
 }
 
 .content-section {
@@ -249,7 +233,7 @@ p {
     letter-spacing: 0.05em;
     margin-bottom: 2px;
     color: #333;
-    padding-top: 4%;
+    padding-top: 0%;
     padding-bottom: 2%;
 }
 
@@ -442,7 +426,7 @@ p {
     }
 
     .content-section {
-        scroll-margin-top: 160px;
+        padding: 0 6%;
     }
 
     .project-list {
