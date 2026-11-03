@@ -136,3 +136,40 @@ body > header:empty,
 @media (max-width: 520px) {
     body { font-size: 16px; }
 }
+
+.corner-art {
+    position: absolute;
+    top: 150px;
+    left: calc(50% - 400px);
+    z-index: -1;
+    margin: 0;
+    font-family: monospace;
+    font-size: 8px;
+    line-height: 1;
+    white-space: pre;
+    color: var(--link);
+    opacity: 0.6;
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 900px) {
+    .corner-art { display: none; }
+}
+
+.name-art {
+    position: absolute;
+    top: 40px;
+    right: calc(50% - 320px);
+    white-space: pre;
+    font-family: "DejaVu Sans Mono", monospace;
+    font-size: 6px;
+    line-height: 1;
+    color: var(--link);
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 700px) {
+    .name-art { right: 16px; }
+}
